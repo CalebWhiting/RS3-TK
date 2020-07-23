@@ -1,0 +1,2314 @@
+<xcb>
+    <types>
+        <xcb_char2b_t>
+            <field name="byte1" type="uint8_t"/>
+            <field name="byte2" type="uint8_t"/>
+        </xcb_char2b_t>
+        <xcb_char2b_iterator_t>
+            <field name="data" type="xcb_char2b_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_char2b_iterator_t>
+        <xcb_window_iterator_t>
+            <field name="data" type="xcb_window_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_window_iterator_t>
+        <xcb_pixmap_iterator_t>
+            <field name="data" type="xcb_pixmap_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_pixmap_iterator_t>
+        <xcb_cursor_iterator_t>
+            <field name="data" type="xcb_cursor_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_cursor_iterator_t>
+        <xcb_font_iterator_t>
+            <field name="data" type="xcb_font_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_font_iterator_t>
+        <xcb_gcontext_iterator_t>
+            <field name="data" type="xcb_gcontext_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_gcontext_iterator_t>
+        <xcb_colormap_iterator_t>
+            <field name="data" type="xcb_colormap_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_colormap_iterator_t>
+        <xcb_atom_iterator_t>
+            <field name="data" type="xcb_atom_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_atom_iterator_t>
+        <xcb_drawable_iterator_t>
+            <field name="data" type="xcb_drawable_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_drawable_iterator_t>
+        <xcb_fontable_iterator_t>
+            <field name="data" type="xcb_fontable_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_fontable_iterator_t>
+        <xcb_bool32_iterator_t>
+            <field name="data" type="xcb_bool32_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_bool32_iterator_t>
+        <xcb_visualid_iterator_t>
+            <field name="data" type="xcb_visualid_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_visualid_iterator_t>
+        <xcb_timestamp_iterator_t>
+            <field name="data" type="xcb_timestamp_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_timestamp_iterator_t>
+        <xcb_keysym_iterator_t>
+            <field name="data" type="xcb_keysym_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_keysym_iterator_t>
+        <xcb_keycode_iterator_t>
+            <field name="data" type="xcb_keycode_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_keycode_iterator_t>
+        <xcb_keycode32_iterator_t>
+            <field name="data" type="xcb_keycode32_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_keycode32_iterator_t>
+        <xcb_button_iterator_t>
+            <field name="data" type="xcb_button_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_button_iterator_t>
+        <xcb_point_t>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_point_t>
+        <xcb_point_iterator_t>
+            <field name="data" type="xcb_point_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_point_iterator_t>
+        <xcb_rectangle_t>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+        </xcb_rectangle_t>
+        <xcb_rectangle_iterator_t>
+            <field name="data" type="xcb_rectangle_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_rectangle_iterator_t>
+        <xcb_arc_t>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="angle1" type="int16_t"/>
+            <field name="angle2" type="int16_t"/>
+        </xcb_arc_t>
+        <xcb_arc_iterator_t>
+            <field name="data" type="xcb_arc_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_arc_iterator_t>
+        <xcb_format_t>
+            <field name="depth" type="uint8_t"/>
+            <field name="bits_per_pixel" type="uint8_t"/>
+            <field name="scanline_pad" type="uint8_t"/>
+            <field name="pad0" type="uint8_t" len="5"/>
+        </xcb_format_t>
+        <xcb_format_iterator_t>
+            <field name="data" type="xcb_format_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_format_iterator_t>
+        <xcb_visualtype_t>
+            <field name="visual_id" type="xcb_visualid_t"/>
+            <field name="_class" type="uint8_t"/>
+            <field name="bits_per_rgb_value" type="uint8_t"/>
+            <field name="colormap_entries" type="uint16_t"/>
+            <field name="red_mask" type="uint32_t"/>
+            <field name="green_mask" type="uint32_t"/>
+            <field name="blue_mask" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="4"/>
+        </xcb_visualtype_t>
+        <xcb_visualtype_iterator_t>
+            <field name="data" type="xcb_visualtype_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_visualtype_iterator_t>
+        <xcb_depth_t>
+            <field name="depth" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="visuals_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="4"/>
+        </xcb_depth_t>
+        <xcb_depth_iterator_t>
+            <field name="data" type="xcb_depth_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_depth_iterator_t>
+        <xcb_screen_t>
+            <field name="root" type="xcb_window_t"/>
+            <field name="default_colormap" type="xcb_colormap_t"/>
+            <field name="white_pixel" type="uint32_t"/>
+            <field name="black_pixel" type="uint32_t"/>
+            <field name="current_input_masks" type="uint32_t"/>
+            <field name="width_in_pixels" type="uint16_t"/>
+            <field name="height_in_pixels" type="uint16_t"/>
+            <field name="width_in_millimeters" type="uint16_t"/>
+            <field name="height_in_millimeters" type="uint16_t"/>
+            <field name="min_installed_maps" type="uint16_t"/>
+            <field name="max_installed_maps" type="uint16_t"/>
+            <field name="root_visual" type="xcb_visualid_t"/>
+            <field name="backing_stores" type="uint8_t"/>
+            <field name="save_unders" type="uint8_t"/>
+            <field name="root_depth" type="uint8_t"/>
+            <field name="allowed_depths_len" type="uint8_t"/>
+        </xcb_screen_t>
+        <xcb_screen_iterator_t>
+            <field name="data" type="xcb_screen_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_screen_iterator_t>
+        <xcb_setup_request_t>
+            <field name="byte_order" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="protocol_major_version" type="uint16_t"/>
+            <field name="protocol_minor_version" type="uint16_t"/>
+            <field name="authorization_protocol_name_len" type="uint16_t"/>
+            <field name="authorization_protocol_data_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_setup_request_t>
+        <xcb_setup_request_iterator_t>
+            <field name="data" type="xcb_setup_request_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_setup_request_iterator_t>
+        <xcb_setup_failed_t>
+            <field name="status" type="uint8_t"/>
+            <field name="reason_len" type="uint8_t"/>
+            <field name="protocol_major_version" type="uint16_t"/>
+            <field name="protocol_minor_version" type="uint16_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_setup_failed_t>
+        <xcb_setup_failed_iterator_t>
+            <field name="data" type="xcb_setup_failed_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_setup_failed_iterator_t>
+        <xcb_setup_authenticate_t>
+            <field name="status" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="5"/>
+        </xcb_setup_authenticate_t>
+        <xcb_setup_authenticate_iterator_t>
+            <field name="data" type="xcb_setup_authenticate_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_setup_authenticate_iterator_t>
+        <xcb_setup_t>
+            <field name="status" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="protocol_major_version" type="uint16_t"/>
+            <field name="protocol_minor_version" type="uint16_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="release_number" type="uint32_t"/>
+            <field name="resource_id_base" type="uint32_t"/>
+            <field name="resource_id_mask" type="uint32_t"/>
+            <field name="motion_buffer_size" type="uint32_t"/>
+            <field name="vendor_len" type="uint16_t"/>
+            <field name="maximum_request_length" type="uint16_t"/>
+            <field name="roots_len" type="uint8_t"/>
+            <field name="pixmap_formats_len" type="uint8_t"/>
+            <field name="image_byte_order" type="uint8_t"/>
+            <field name="bitmap_format_bit_order" type="uint8_t"/>
+            <field name="bitmap_format_scanline_unit" type="uint8_t"/>
+            <field name="bitmap_format_scanline_pad" type="uint8_t"/>
+            <field name="min_keycode" type="xcb_keycode_t"/>
+            <field name="max_keycode" type="xcb_keycode_t"/>
+            <field name="pad1" type="uint8_t" len="4"/>
+        </xcb_setup_t>
+        <xcb_setup_iterator_t>
+            <field name="data" type="xcb_setup_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_setup_iterator_t>
+        <xcb_key_press_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="detail" type="xcb_keycode_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="root" type="xcb_window_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="child" type="xcb_window_t"/>
+            <field name="root_x" type="int16_t"/>
+            <field name="root_y" type="int16_t"/>
+            <field name="event_x" type="int16_t"/>
+            <field name="event_y" type="int16_t"/>
+            <field name="state" type="uint16_t"/>
+            <field name="same_screen" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+        </xcb_key_press_event_t>
+        <xcb_button_press_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="detail" type="xcb_button_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="root" type="xcb_window_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="child" type="xcb_window_t"/>
+            <field name="root_x" type="int16_t"/>
+            <field name="root_y" type="int16_t"/>
+            <field name="event_x" type="int16_t"/>
+            <field name="event_y" type="int16_t"/>
+            <field name="state" type="uint16_t"/>
+            <field name="same_screen" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+        </xcb_button_press_event_t>
+        <xcb_motion_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="detail" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="root" type="xcb_window_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="child" type="xcb_window_t"/>
+            <field name="root_x" type="int16_t"/>
+            <field name="root_y" type="int16_t"/>
+            <field name="event_x" type="int16_t"/>
+            <field name="event_y" type="int16_t"/>
+            <field name="state" type="uint16_t"/>
+            <field name="same_screen" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+        </xcb_motion_notify_event_t>
+        <xcb_enter_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="detail" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="root" type="xcb_window_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="child" type="xcb_window_t"/>
+            <field name="root_x" type="int16_t"/>
+            <field name="root_y" type="int16_t"/>
+            <field name="event_x" type="int16_t"/>
+            <field name="event_y" type="int16_t"/>
+            <field name="state" type="uint16_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="same_screen_focus" type="uint8_t"/>
+        </xcb_enter_notify_event_t>
+        <xcb_focus_in_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="detail" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t" len="3"/>
+        </xcb_focus_in_event_t>
+        <xcb_keymap_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="keys" type="uint8_t" len="31"/>
+        </xcb_keymap_notify_event_t>
+        <xcb_expose_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="x" type="uint16_t"/>
+            <field name="y" type="uint16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="count" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_expose_event_t>
+        <xcb_graphics_exposure_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="x" type="uint16_t"/>
+            <field name="y" type="uint16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="minor_opcode" type="uint16_t"/>
+            <field name="count" type="uint16_t"/>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="3"/>
+        </xcb_graphics_exposure_event_t>
+        <xcb_no_exposure_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="minor_opcode" type="uint16_t"/>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad1" type="uint8_t"/>
+        </xcb_no_exposure_event_t>
+        <xcb_visibility_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="state" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="3"/>
+        </xcb_visibility_notify_event_t>
+        <xcb_create_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="parent" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="border_width" type="uint16_t"/>
+            <field name="override_redirect" type="uint8_t"/>
+            <field name="pad1" type="uint8_t"/>
+        </xcb_create_notify_event_t>
+        <xcb_destroy_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_destroy_notify_event_t>
+        <xcb_unmap_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="from_configure" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="3"/>
+        </xcb_unmap_notify_event_t>
+        <xcb_map_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="override_redirect" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="3"/>
+        </xcb_map_notify_event_t>
+        <xcb_map_request_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="parent" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_map_request_event_t>
+        <xcb_reparent_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="parent" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="override_redirect" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="3"/>
+        </xcb_reparent_notify_event_t>
+        <xcb_configure_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="above_sibling" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="border_width" type="uint16_t"/>
+            <field name="override_redirect" type="uint8_t"/>
+            <field name="pad1" type="uint8_t"/>
+        </xcb_configure_notify_event_t>
+        <xcb_configure_request_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="stack_mode" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="parent" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="sibling" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="border_width" type="uint16_t"/>
+            <field name="value_mask" type="uint16_t"/>
+        </xcb_configure_request_event_t>
+        <xcb_gravity_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_gravity_notify_event_t>
+        <xcb_resize_request_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+        </xcb_resize_request_event_t>
+        <xcb_circulate_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="event" type="xcb_window_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="place" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="4"/>
+            <field name="pad2" type="uint8_t" len="3"/>
+        </xcb_circulate_notify_event_t>
+        <xcb_property_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="atom" type="xcb_atom_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="state" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="3"/>
+        </xcb_property_notify_event_t>
+        <xcb_selection_clear_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="owner" type="xcb_window_t"/>
+            <field name="selection" type="xcb_atom_t"/>
+        </xcb_selection_clear_event_t>
+        <xcb_selection_request_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="owner" type="xcb_window_t"/>
+            <field name="requestor" type="xcb_window_t"/>
+            <field name="selection" type="xcb_atom_t"/>
+            <field name="target" type="xcb_atom_t"/>
+            <field name="property" type="xcb_atom_t"/>
+        </xcb_selection_request_event_t>
+        <xcb_selection_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="requestor" type="xcb_window_t"/>
+            <field name="selection" type="xcb_atom_t"/>
+            <field name="target" type="xcb_atom_t"/>
+            <field name="property" type="xcb_atom_t"/>
+        </xcb_selection_notify_event_t>
+        <xcb_colormap_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="colormap" type="xcb_colormap_t"/>
+            <field name="_new" type="uint8_t"/>
+            <field name="state" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_colormap_notify_event_t>
+        <xcb_client_message_data_t union="true">
+            <field name="data8" type="uint8_t" len="20"/>
+            <field name="data16" type="uint16_t" len="10"/>
+            <field name="data32" type="uint32_t" len="5"/>
+        </xcb_client_message_data_t>
+        <xcb_client_message_data_iterator_t>
+            <field name="data" type="xcb_client_message_data_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_client_message_data_iterator_t>
+        <xcb_client_message_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="format" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="type" type="xcb_atom_t"/>
+            <field name="data" type="xcb_client_message_data_t"/>
+        </xcb_client_message_event_t>
+        <xcb_mapping_notify_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="request" type="uint8_t"/>
+            <field name="first_keycode" type="xcb_keycode_t"/>
+            <field name="count" type="uint8_t"/>
+            <field name="pad1" type="uint8_t"/>
+        </xcb_mapping_notify_event_t>
+        <xcb_ge_generic_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="extension" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="event_type" type="uint16_t"/>
+            <field name="full_sequence" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="22"/>
+        </xcb_ge_generic_event_t>
+        <xcb_request_error_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="error_code" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="bad_value" type="uint32_t"/>
+            <field name="minor_opcode" type="uint16_t"/>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+        </xcb_request_error_t>
+        <xcb_value_error_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="error_code" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="bad_value" type="uint32_t"/>
+            <field name="minor_opcode" type="uint16_t"/>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+        </xcb_value_error_t>
+        <xcb_create_window_value_list_t>
+            <field name="background_pixmap" type="xcb_pixmap_t"/>
+            <field name="background_pixel" type="uint32_t"/>
+            <field name="border_pixmap" type="xcb_pixmap_t"/>
+            <field name="border_pixel" type="uint32_t"/>
+            <field name="bit_gravity" type="uint32_t"/>
+            <field name="win_gravity" type="uint32_t"/>
+            <field name="backing_store" type="uint32_t"/>
+            <field name="backing_planes" type="uint32_t"/>
+            <field name="backing_pixel" type="uint32_t"/>
+            <field name="override_redirect" type="xcb_bool32_t"/>
+            <field name="save_under" type="xcb_bool32_t"/>
+            <field name="event_mask" type="uint32_t"/>
+            <field name="do_not_propogate_mask" type="uint32_t"/>
+            <field name="colormap" type="xcb_colormap_t"/>
+            <field name="cursor" type="xcb_cursor_t"/>
+        </xcb_create_window_value_list_t>
+        <xcb_create_window_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="depth" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="wid" type="xcb_window_t"/>
+            <field name="parent" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="border_width" type="uint16_t"/>
+            <field name="_class" type="uint16_t"/>
+            <field name="visual" type="xcb_visualid_t"/>
+            <field name="value_mask" type="uint32_t"/>
+        </xcb_create_window_request_t>
+        <xcb_change_window_attributes_value_list_t>
+            <field name="background_pixmap" type="xcb_pixmap_t"/>
+            <field name="background_pixel" type="uint32_t"/>
+            <field name="border_pixmap" type="xcb_pixmap_t"/>
+            <field name="border_pixel" type="uint32_t"/>
+            <field name="bit_gravity" type="uint32_t"/>
+            <field name="win_gravity" type="uint32_t"/>
+            <field name="backing_store" type="uint32_t"/>
+            <field name="backing_planes" type="uint32_t"/>
+            <field name="backing_pixel" type="uint32_t"/>
+            <field name="override_redirect" type="xcb_bool32_t"/>
+            <field name="save_under" type="xcb_bool32_t"/>
+            <field name="event_mask" type="uint32_t"/>
+            <field name="do_not_propogate_mask" type="uint32_t"/>
+            <field name="colormap" type="xcb_colormap_t"/>
+            <field name="cursor" type="xcb_cursor_t"/>
+        </xcb_change_window_attributes_value_list_t>
+        <xcb_change_window_attributes_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="value_mask" type="uint32_t"/>
+        </xcb_change_window_attributes_request_t>
+        <xcb_get_window_attributes_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_window_attributes_cookie_t>
+        <xcb_get_window_attributes_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_get_window_attributes_request_t>
+        <xcb_get_window_attributes_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="backing_store" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="visual" type="xcb_visualid_t"/>
+            <field name="_class" type="uint16_t"/>
+            <field name="bit_gravity" type="uint8_t"/>
+            <field name="win_gravity" type="uint8_t"/>
+            <field name="backing_planes" type="uint32_t"/>
+            <field name="backing_pixel" type="uint32_t"/>
+            <field name="save_under" type="uint8_t"/>
+            <field name="map_is_installed" type="uint8_t"/>
+            <field name="map_state" type="uint8_t"/>
+            <field name="override_redirect" type="uint8_t"/>
+            <field name="colormap" type="xcb_colormap_t"/>
+            <field name="all_event_masks" type="uint32_t"/>
+            <field name="your_event_mask" type="uint32_t"/>
+            <field name="do_not_propagate_mask" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_get_window_attributes_reply_t>
+        <xcb_destroy_window_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_destroy_window_request_t>
+        <xcb_destroy_subwindows_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_destroy_subwindows_request_t>
+        <xcb_change_save_set_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_change_save_set_request_t>
+        <xcb_reparent_window_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="parent" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_reparent_window_request_t>
+        <xcb_map_window_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_map_window_request_t>
+        <xcb_map_subwindows_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_map_subwindows_request_t>
+        <xcb_unmap_window_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_unmap_window_request_t>
+        <xcb_unmap_subwindows_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_unmap_subwindows_request_t>
+        <xcb_configure_window_value_list_t>
+            <field name="x" type="int32_t"/>
+            <field name="y" type="int32_t"/>
+            <field name="width" type="uint32_t"/>
+            <field name="height" type="uint32_t"/>
+            <field name="border_width" type="uint32_t"/>
+            <field name="sibling" type="xcb_window_t"/>
+            <field name="stack_mode" type="uint32_t"/>
+        </xcb_configure_window_value_list_t>
+        <xcb_configure_window_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="value_mask" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_configure_window_request_t>
+        <xcb_circulate_window_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="direction" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_circulate_window_request_t>
+        <xcb_get_geometry_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_geometry_cookie_t>
+        <xcb_get_geometry_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+        </xcb_get_geometry_request_t>
+        <xcb_get_geometry_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="depth" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="root" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="border_width" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_get_geometry_reply_t>
+        <xcb_query_tree_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_tree_cookie_t>
+        <xcb_query_tree_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_query_tree_request_t>
+        <xcb_query_tree_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="root" type="xcb_window_t"/>
+            <field name="parent" type="xcb_window_t"/>
+            <field name="children_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="14"/>
+        </xcb_query_tree_reply_t>
+        <xcb_intern_atom_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_intern_atom_cookie_t>
+        <xcb_intern_atom_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="only_if_exists" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="name_len" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_intern_atom_request_t>
+        <xcb_intern_atom_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="atom" type="xcb_atom_t"/>
+        </xcb_intern_atom_reply_t>
+        <xcb_get_atom_name_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_atom_name_cookie_t>
+        <xcb_get_atom_name_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="atom" type="xcb_atom_t"/>
+        </xcb_get_atom_name_request_t>
+        <xcb_get_atom_name_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="name_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="22"/>
+        </xcb_get_atom_name_reply_t>
+        <xcb_change_property_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="property" type="xcb_atom_t"/>
+            <field name="type" type="xcb_atom_t"/>
+            <field name="format" type="uint8_t"/>
+            <field name="data_len" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="3"/>
+        </xcb_change_property_request_t>
+        <xcb_delete_property_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="property" type="xcb_atom_t"/>
+        </xcb_delete_property_request_t>
+        <xcb_get_property_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_property_cookie_t>
+        <xcb_get_property_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="_delete" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="property" type="xcb_atom_t"/>
+            <field name="type" type="xcb_atom_t"/>
+            <field name="long_offset" type="uint32_t"/>
+            <field name="long_length" type="uint32_t"/>
+        </xcb_get_property_request_t>
+        <xcb_get_property_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="format" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="type" type="xcb_atom_t"/>
+            <field name="bytes_after" type="uint32_t"/>
+            <field name="value_len" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="12"/>
+        </xcb_get_property_reply_t>
+        <xcb_list_properties_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_list_properties_cookie_t>
+        <xcb_list_properties_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_list_properties_request_t>
+        <xcb_list_properties_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="atoms_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="22"/>
+        </xcb_list_properties_reply_t>
+        <xcb_set_selection_owner_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="owner" type="xcb_window_t"/>
+            <field name="selection" type="xcb_atom_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+        </xcb_set_selection_owner_request_t>
+        <xcb_get_selection_owner_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_selection_owner_cookie_t>
+        <xcb_get_selection_owner_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="selection" type="xcb_atom_t"/>
+        </xcb_get_selection_owner_request_t>
+        <xcb_get_selection_owner_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="owner" type="xcb_window_t"/>
+        </xcb_get_selection_owner_reply_t>
+        <xcb_convert_selection_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="requestor" type="xcb_window_t"/>
+            <field name="selection" type="xcb_atom_t"/>
+            <field name="target" type="xcb_atom_t"/>
+            <field name="property" type="xcb_atom_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+        </xcb_convert_selection_request_t>
+        <xcb_send_event_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="propagate" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="destination" type="xcb_window_t"/>
+            <field name="event_mask" type="uint32_t"/>
+            <field name="event" type="char" len="32"/>
+        </xcb_send_event_request_t>
+        <xcb_grab_pointer_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_grab_pointer_cookie_t>
+        <xcb_grab_pointer_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="owner_events" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="grab_window" type="xcb_window_t"/>
+            <field name="event_mask" type="uint16_t"/>
+            <field name="pointer_mode" type="uint8_t"/>
+            <field name="keyboard_mode" type="uint8_t"/>
+            <field name="confine_to" type="xcb_window_t"/>
+            <field name="cursor" type="xcb_cursor_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+        </xcb_grab_pointer_request_t>
+        <xcb_grab_pointer_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="status" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+        </xcb_grab_pointer_reply_t>
+        <xcb_ungrab_pointer_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+        </xcb_ungrab_pointer_request_t>
+        <xcb_grab_button_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="owner_events" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="grab_window" type="xcb_window_t"/>
+            <field name="event_mask" type="uint16_t"/>
+            <field name="pointer_mode" type="uint8_t"/>
+            <field name="keyboard_mode" type="uint8_t"/>
+            <field name="confine_to" type="xcb_window_t"/>
+            <field name="cursor" type="xcb_cursor_t"/>
+            <field name="button" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="modifiers" type="uint16_t"/>
+        </xcb_grab_button_request_t>
+        <xcb_ungrab_button_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="button" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="grab_window" type="xcb_window_t"/>
+            <field name="modifiers" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_ungrab_button_request_t>
+        <xcb_change_active_pointer_grab_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cursor" type="xcb_cursor_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="event_mask" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_change_active_pointer_grab_request_t>
+        <xcb_grab_keyboard_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_grab_keyboard_cookie_t>
+        <xcb_grab_keyboard_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="owner_events" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="grab_window" type="xcb_window_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="pointer_mode" type="uint8_t"/>
+            <field name="keyboard_mode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_grab_keyboard_request_t>
+        <xcb_grab_keyboard_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="status" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+        </xcb_grab_keyboard_reply_t>
+        <xcb_ungrab_keyboard_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+        </xcb_ungrab_keyboard_request_t>
+        <xcb_grab_key_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="owner_events" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="grab_window" type="xcb_window_t"/>
+            <field name="modifiers" type="uint16_t"/>
+            <field name="key" type="xcb_keycode_t"/>
+            <field name="pointer_mode" type="uint8_t"/>
+            <field name="keyboard_mode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t" len="3"/>
+        </xcb_grab_key_request_t>
+        <xcb_ungrab_key_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="key" type="xcb_keycode_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="grab_window" type="xcb_window_t"/>
+            <field name="modifiers" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_ungrab_key_request_t>
+        <xcb_allow_events_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+        </xcb_allow_events_request_t>
+        <xcb_grab_server_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_grab_server_request_t>
+        <xcb_ungrab_server_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_ungrab_server_request_t>
+        <xcb_query_pointer_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_pointer_cookie_t>
+        <xcb_query_pointer_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_query_pointer_request_t>
+        <xcb_query_pointer_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="same_screen" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="root" type="xcb_window_t"/>
+            <field name="child" type="xcb_window_t"/>
+            <field name="root_x" type="int16_t"/>
+            <field name="root_y" type="int16_t"/>
+            <field name="win_x" type="int16_t"/>
+            <field name="win_y" type="int16_t"/>
+            <field name="mask" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_query_pointer_reply_t>
+        <xcb_timecoord_t>
+            <field name="time" type="xcb_timestamp_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_timecoord_t>
+        <xcb_timecoord_iterator_t>
+            <field name="data" type="xcb_timecoord_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_timecoord_iterator_t>
+        <xcb_get_motion_events_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_motion_events_cookie_t>
+        <xcb_get_motion_events_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="start" type="xcb_timestamp_t"/>
+            <field name="stop" type="xcb_timestamp_t"/>
+        </xcb_get_motion_events_request_t>
+        <xcb_get_motion_events_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="events_len" type="uint32_t"/>
+            <field name="pad1" type="uint8_t" len="20"/>
+        </xcb_get_motion_events_reply_t>
+        <xcb_translate_coordinates_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_translate_coordinates_cookie_t>
+        <xcb_translate_coordinates_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="src_window" type="xcb_window_t"/>
+            <field name="dst_window" type="xcb_window_t"/>
+            <field name="src_x" type="int16_t"/>
+            <field name="src_y" type="int16_t"/>
+        </xcb_translate_coordinates_request_t>
+        <xcb_translate_coordinates_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="same_screen" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="child" type="xcb_window_t"/>
+            <field name="dst_x" type="int16_t"/>
+            <field name="dst_y" type="int16_t"/>
+        </xcb_translate_coordinates_reply_t>
+        <xcb_warp_pointer_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="src_window" type="xcb_window_t"/>
+            <field name="dst_window" type="xcb_window_t"/>
+            <field name="src_x" type="int16_t"/>
+            <field name="src_y" type="int16_t"/>
+            <field name="src_width" type="uint16_t"/>
+            <field name="src_height" type="uint16_t"/>
+            <field name="dst_x" type="int16_t"/>
+            <field name="dst_y" type="int16_t"/>
+        </xcb_warp_pointer_request_t>
+        <xcb_set_input_focus_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="revert_to" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="focus" type="xcb_window_t"/>
+            <field name="time" type="xcb_timestamp_t"/>
+        </xcb_set_input_focus_request_t>
+        <xcb_get_input_focus_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_input_focus_cookie_t>
+        <xcb_get_input_focus_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_get_input_focus_request_t>
+        <xcb_get_input_focus_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="revert_to" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="focus" type="xcb_window_t"/>
+        </xcb_get_input_focus_reply_t>
+        <xcb_query_keymap_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_keymap_cookie_t>
+        <xcb_query_keymap_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_query_keymap_request_t>
+        <xcb_query_keymap_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="keys" type="uint8_t" len="32"/>
+        </xcb_query_keymap_reply_t>
+        <xcb_open_font_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="fid" type="xcb_font_t"/>
+            <field name="name_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_open_font_request_t>
+        <xcb_close_font_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="font" type="xcb_font_t"/>
+        </xcb_close_font_request_t>
+        <xcb_fontprop_t>
+            <field name="name" type="xcb_atom_t"/>
+            <field name="value" type="uint32_t"/>
+        </xcb_fontprop_t>
+        <xcb_fontprop_iterator_t>
+            <field name="data" type="xcb_fontprop_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_fontprop_iterator_t>
+        <xcb_charinfo_t>
+            <field name="left_side_bearing" type="int16_t"/>
+            <field name="right_side_bearing" type="int16_t"/>
+            <field name="character_width" type="int16_t"/>
+            <field name="ascent" type="int16_t"/>
+            <field name="descent" type="int16_t"/>
+            <field name="attributes" type="uint16_t"/>
+        </xcb_charinfo_t>
+        <xcb_charinfo_iterator_t>
+            <field name="data" type="xcb_charinfo_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_charinfo_iterator_t>
+        <xcb_query_font_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_font_cookie_t>
+        <xcb_query_font_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="font" type="xcb_fontable_t"/>
+        </xcb_query_font_request_t>
+        <xcb_query_font_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="min_bounds" type="xcb_charinfo_t"/>
+            <field name="max_bounds" type="xcb_charinfo_t"/>
+            <field name="min_char_or_byte2" type="uint16_t"/>
+            <field name="max_char_or_byte2" type="uint16_t"/>
+            <field name="default_char" type="uint16_t"/>
+            <field name="properties_len" type="uint16_t"/>
+            <field name="draw_direction" type="uint8_t"/>
+            <field name="min_byte1" type="uint8_t"/>
+            <field name="max_byte1" type="uint8_t"/>
+            <field name="all_chars_exist" type="uint8_t"/>
+            <field name="font_ascent" type="int16_t"/>
+            <field name="font_descent" type="int16_t"/>
+            <field name="char_infos_len" type="uint32_t"/>
+            <field name="pad1" type="uint8_t" len="4"/>
+            <field name="pad2" type="uint8_t" len="4"/>
+        </xcb_query_font_reply_t>
+        <xcb_query_text_extents_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_text_extents_cookie_t>
+        <xcb_query_text_extents_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="odd_length" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="font" type="xcb_fontable_t"/>
+        </xcb_query_text_extents_request_t>
+        <xcb_query_text_extents_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="draw_direction" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="font_ascent" type="int16_t"/>
+            <field name="font_descent" type="int16_t"/>
+            <field name="overall_ascent" type="int16_t"/>
+            <field name="overall_descent" type="int16_t"/>
+            <field name="overall_width" type="int32_t"/>
+            <field name="overall_left" type="int32_t"/>
+            <field name="overall_right" type="int32_t"/>
+        </xcb_query_text_extents_reply_t>
+        <xcb_str_t>
+            <field name="name_len" type="uint8_t"/>
+        </xcb_str_t>
+        <xcb_str_iterator_t>
+            <field name="data" type="xcb_str_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_str_iterator_t>
+        <xcb_list_fonts_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_list_fonts_cookie_t>
+        <xcb_list_fonts_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="max_names" type="uint16_t"/>
+            <field name="pattern_len" type="uint16_t"/>
+        </xcb_list_fonts_request_t>
+        <xcb_list_fonts_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="names_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="22"/>
+        </xcb_list_fonts_reply_t>
+        <xcb_list_fonts_with_info_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_list_fonts_with_info_cookie_t>
+        <xcb_list_fonts_with_info_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="max_names" type="uint16_t"/>
+            <field name="pattern_len" type="uint16_t"/>
+        </xcb_list_fonts_with_info_request_t>
+        <xcb_list_fonts_with_info_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="name_len" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="min_bounds" type="xcb_charinfo_t"/>
+            <field name="max_bounds" type="xcb_charinfo_t"/>
+            <field name="min_char_or_byte2" type="uint16_t"/>
+            <field name="max_char_or_byte2" type="uint16_t"/>
+            <field name="default_char" type="uint16_t"/>
+            <field name="properties_len" type="uint16_t"/>
+            <field name="draw_direction" type="uint8_t"/>
+            <field name="min_byte1" type="uint8_t"/>
+            <field name="max_byte1" type="uint8_t"/>
+            <field name="all_chars_exist" type="uint8_t"/>
+            <field name="font_ascent" type="int16_t"/>
+            <field name="font_descent" type="int16_t"/>
+            <field name="replies_hint" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="4"/>
+            <field name="pad1" type="uint8_t" len="4"/>
+        </xcb_list_fonts_with_info_reply_t>
+        <xcb_set_font_path_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="font_qty" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_set_font_path_request_t>
+        <xcb_get_font_path_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_font_path_cookie_t>
+        <xcb_get_font_path_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_get_font_path_request_t>
+        <xcb_get_font_path_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="path_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="22"/>
+        </xcb_get_font_path_reply_t>
+        <xcb_create_pixmap_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="depth" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="pid" type="xcb_pixmap_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+        </xcb_create_pixmap_request_t>
+        <xcb_free_pixmap_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="pixmap" type="xcb_pixmap_t"/>
+        </xcb_free_pixmap_request_t>
+        <xcb_create_gc_value_list_t>
+            <field name="function" type="uint32_t"/>
+            <field name="plane_mask" type="uint32_t"/>
+            <field name="foreground" type="uint32_t"/>
+            <field name="background" type="uint32_t"/>
+            <field name="line_width" type="uint32_t"/>
+            <field name="line_style" type="uint32_t"/>
+            <field name="cap_style" type="uint32_t"/>
+            <field name="join_style" type="uint32_t"/>
+            <field name="fill_style" type="uint32_t"/>
+            <field name="fill_rule" type="uint32_t"/>
+            <field name="tile" type="xcb_pixmap_t"/>
+            <field name="stipple" type="xcb_pixmap_t"/>
+            <field name="tile_stipple_x_origin" type="int32_t"/>
+            <field name="tile_stipple_y_origin" type="int32_t"/>
+            <field name="font" type="xcb_font_t"/>
+            <field name="subwindow_mode" type="uint32_t"/>
+            <field name="graphics_exposures" type="xcb_bool32_t"/>
+            <field name="clip_x_origin" type="int32_t"/>
+            <field name="clip_y_origin" type="int32_t"/>
+            <field name="clip_mask" type="xcb_pixmap_t"/>
+            <field name="dash_offset" type="uint32_t"/>
+            <field name="dashes" type="uint32_t"/>
+            <field name="arc_mode" type="uint32_t"/>
+        </xcb_create_gc_value_list_t>
+        <xcb_create_gc_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cid" type="xcb_gcontext_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="value_mask" type="uint32_t"/>
+        </xcb_create_gc_request_t>
+        <xcb_change_gc_value_list_t>
+            <field name="function" type="uint32_t"/>
+            <field name="plane_mask" type="uint32_t"/>
+            <field name="foreground" type="uint32_t"/>
+            <field name="background" type="uint32_t"/>
+            <field name="line_width" type="uint32_t"/>
+            <field name="line_style" type="uint32_t"/>
+            <field name="cap_style" type="uint32_t"/>
+            <field name="join_style" type="uint32_t"/>
+            <field name="fill_style" type="uint32_t"/>
+            <field name="fill_rule" type="uint32_t"/>
+            <field name="tile" type="xcb_pixmap_t"/>
+            <field name="stipple" type="xcb_pixmap_t"/>
+            <field name="tile_stipple_x_origin" type="int32_t"/>
+            <field name="tile_stipple_y_origin" type="int32_t"/>
+            <field name="font" type="xcb_font_t"/>
+            <field name="subwindow_mode" type="uint32_t"/>
+            <field name="graphics_exposures" type="xcb_bool32_t"/>
+            <field name="clip_x_origin" type="int32_t"/>
+            <field name="clip_y_origin" type="int32_t"/>
+            <field name="clip_mask" type="xcb_pixmap_t"/>
+            <field name="dash_offset" type="uint32_t"/>
+            <field name="dashes" type="uint32_t"/>
+            <field name="arc_mode" type="uint32_t"/>
+        </xcb_change_gc_value_list_t>
+        <xcb_change_gc_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="value_mask" type="uint32_t"/>
+        </xcb_change_gc_request_t>
+        <xcb_copy_gc_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="src_gc" type="xcb_gcontext_t"/>
+            <field name="dst_gc" type="xcb_gcontext_t"/>
+            <field name="value_mask" type="uint32_t"/>
+        </xcb_copy_gc_request_t>
+        <xcb_set_dashes_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="dash_offset" type="uint16_t"/>
+            <field name="dashes_len" type="uint16_t"/>
+        </xcb_set_dashes_request_t>
+        <xcb_set_clip_rectangles_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="ordering" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="clip_x_origin" type="int16_t"/>
+            <field name="clip_y_origin" type="int16_t"/>
+        </xcb_set_clip_rectangles_request_t>
+        <xcb_free_gc_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_free_gc_request_t>
+        <xcb_clear_area_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="exposures" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+        </xcb_clear_area_request_t>
+        <xcb_copy_area_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="src_drawable" type="xcb_drawable_t"/>
+            <field name="dst_drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="src_x" type="int16_t"/>
+            <field name="src_y" type="int16_t"/>
+            <field name="dst_x" type="int16_t"/>
+            <field name="dst_y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+        </xcb_copy_area_request_t>
+        <xcb_copy_plane_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="src_drawable" type="xcb_drawable_t"/>
+            <field name="dst_drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="src_x" type="int16_t"/>
+            <field name="src_y" type="int16_t"/>
+            <field name="dst_x" type="int16_t"/>
+            <field name="dst_y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="bit_plane" type="uint32_t"/>
+        </xcb_copy_plane_request_t>
+        <xcb_poly_point_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="coordinate_mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_poly_point_request_t>
+        <xcb_poly_line_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="coordinate_mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_poly_line_request_t>
+        <xcb_segment_t>
+            <field name="x1" type="int16_t"/>
+            <field name="y1" type="int16_t"/>
+            <field name="x2" type="int16_t"/>
+            <field name="y2" type="int16_t"/>
+        </xcb_segment_t>
+        <xcb_segment_iterator_t>
+            <field name="data" type="xcb_segment_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_segment_iterator_t>
+        <xcb_poly_segment_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_poly_segment_request_t>
+        <xcb_poly_rectangle_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_poly_rectangle_request_t>
+        <xcb_poly_arc_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_poly_arc_request_t>
+        <xcb_fill_poly_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="shape" type="uint8_t"/>
+            <field name="coordinate_mode" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_fill_poly_request_t>
+        <xcb_poly_fill_rectangle_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_poly_fill_rectangle_request_t>
+        <xcb_poly_fill_arc_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+        </xcb_poly_fill_arc_request_t>
+        <xcb_put_image_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="format" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="dst_x" type="int16_t"/>
+            <field name="dst_y" type="int16_t"/>
+            <field name="left_pad" type="uint8_t"/>
+            <field name="depth" type="uint8_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_put_image_request_t>
+        <xcb_get_image_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_image_cookie_t>
+        <xcb_get_image_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="format" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+            <field name="plane_mask" type="uint32_t"/>
+        </xcb_get_image_request_t>
+        <xcb_get_image_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="depth" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="visual" type="xcb_visualid_t"/>
+            <field name="pad0" type="uint8_t" len="20"/>
+        </xcb_get_image_reply_t>
+        <xcb_poly_text_8_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_poly_text_8_request_t>
+        <xcb_poly_text_16_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_poly_text_16_request_t>
+        <xcb_image_text_8_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="string_len" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_image_text_8_request_t>
+        <xcb_image_text_16_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="string_len" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="gc" type="xcb_gcontext_t"/>
+            <field name="x" type="int16_t"/>
+            <field name="y" type="int16_t"/>
+        </xcb_image_text_16_request_t>
+        <xcb_create_colormap_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="alloc" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="mid" type="xcb_colormap_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="visual" type="xcb_visualid_t"/>
+        </xcb_create_colormap_request_t>
+        <xcb_free_colormap_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+        </xcb_free_colormap_request_t>
+        <xcb_copy_colormap_and_free_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="mid" type="xcb_colormap_t"/>
+            <field name="src_cmap" type="xcb_colormap_t"/>
+        </xcb_copy_colormap_and_free_request_t>
+        <xcb_install_colormap_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+        </xcb_install_colormap_request_t>
+        <xcb_uninstall_colormap_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+        </xcb_uninstall_colormap_request_t>
+        <xcb_list_installed_colormaps_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_list_installed_colormaps_cookie_t>
+        <xcb_list_installed_colormaps_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+        </xcb_list_installed_colormaps_request_t>
+        <xcb_list_installed_colormaps_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="cmaps_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="22"/>
+        </xcb_list_installed_colormaps_reply_t>
+        <xcb_alloc_color_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_alloc_color_cookie_t>
+        <xcb_alloc_color_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+            <field name="red" type="uint16_t"/>
+            <field name="green" type="uint16_t"/>
+            <field name="blue" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_alloc_color_request_t>
+        <xcb_alloc_color_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="red" type="uint16_t"/>
+            <field name="green" type="uint16_t"/>
+            <field name="blue" type="uint16_t"/>
+            <field name="pixel" type="uint32_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_alloc_color_reply_t>
+        <xcb_alloc_named_color_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_alloc_named_color_cookie_t>
+        <xcb_alloc_named_color_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+            <field name="name_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_alloc_named_color_request_t>
+        <xcb_alloc_named_color_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="pixel" type="uint32_t"/>
+            <field name="exact_red" type="uint16_t"/>
+            <field name="exact_green" type="uint16_t"/>
+            <field name="exact_blue" type="uint16_t"/>
+            <field name="visual_red" type="uint16_t"/>
+            <field name="visual_green" type="uint16_t"/>
+            <field name="visual_blue" type="uint16_t"/>
+        </xcb_alloc_named_color_reply_t>
+        <xcb_alloc_color_cells_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_alloc_color_cells_cookie_t>
+        <xcb_alloc_color_cells_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="contiguous" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+            <field name="colors" type="uint16_t"/>
+            <field name="planes" type="uint16_t"/>
+        </xcb_alloc_color_cells_request_t>
+        <xcb_alloc_color_cells_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="pixels_len" type="uint16_t"/>
+            <field name="masks_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="20"/>
+        </xcb_alloc_color_cells_reply_t>
+        <xcb_alloc_color_planes_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_alloc_color_planes_cookie_t>
+        <xcb_alloc_color_planes_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="contiguous" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+            <field name="colors" type="uint16_t"/>
+            <field name="reds" type="uint16_t"/>
+            <field name="greens" type="uint16_t"/>
+            <field name="blues" type="uint16_t"/>
+        </xcb_alloc_color_planes_request_t>
+        <xcb_alloc_color_planes_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="pixels_len" type="uint16_t"/>
+            <field name="red_mask" type="uint32_t"/>
+            <field name="green_mask" type="uint32_t"/>
+            <field name="blue_mask" type="uint32_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+            <field name="pad2" type="uint8_t" len="8"/>
+        </xcb_alloc_color_planes_reply_t>
+        <xcb_free_colors_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+            <field name="plane_mask" type="uint32_t"/>
+        </xcb_free_colors_request_t>
+        <xcb_coloritem_t>
+            <field name="pixel" type="uint32_t"/>
+            <field name="red" type="uint16_t"/>
+            <field name="green" type="uint16_t"/>
+            <field name="blue" type="uint16_t"/>
+            <field name="flags" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+        </xcb_coloritem_t>
+        <xcb_coloritem_iterator_t>
+            <field name="data" type="xcb_coloritem_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_coloritem_iterator_t>
+        <xcb_store_colors_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+        </xcb_store_colors_request_t>
+        <xcb_store_named_color_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="flags" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+            <field name="pixel" type="uint32_t"/>
+            <field name="name_len" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_store_named_color_request_t>
+        <xcb_rgb_t>
+            <field name="red" type="uint16_t"/>
+            <field name="green" type="uint16_t"/>
+            <field name="blue" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_rgb_t>
+        <xcb_rgb_iterator_t>
+            <field name="data" type="xcb_rgb_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_rgb_iterator_t>
+        <xcb_query_colors_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_colors_cookie_t>
+        <xcb_query_colors_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+        </xcb_query_colors_request_t>
+        <xcb_query_colors_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="colors_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="22"/>
+        </xcb_query_colors_reply_t>
+        <xcb_lookup_color_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_lookup_color_cookie_t>
+        <xcb_lookup_color_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cmap" type="xcb_colormap_t"/>
+            <field name="name_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_lookup_color_request_t>
+        <xcb_lookup_color_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="exact_red" type="uint16_t"/>
+            <field name="exact_green" type="uint16_t"/>
+            <field name="exact_blue" type="uint16_t"/>
+            <field name="visual_red" type="uint16_t"/>
+            <field name="visual_green" type="uint16_t"/>
+            <field name="visual_blue" type="uint16_t"/>
+        </xcb_lookup_color_reply_t>
+        <xcb_create_cursor_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cid" type="xcb_cursor_t"/>
+            <field name="source" type="xcb_pixmap_t"/>
+            <field name="mask" type="xcb_pixmap_t"/>
+            <field name="fore_red" type="uint16_t"/>
+            <field name="fore_green" type="uint16_t"/>
+            <field name="fore_blue" type="uint16_t"/>
+            <field name="back_red" type="uint16_t"/>
+            <field name="back_green" type="uint16_t"/>
+            <field name="back_blue" type="uint16_t"/>
+            <field name="x" type="uint16_t"/>
+            <field name="y" type="uint16_t"/>
+        </xcb_create_cursor_request_t>
+        <xcb_create_glyph_cursor_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cid" type="xcb_cursor_t"/>
+            <field name="source_font" type="xcb_font_t"/>
+            <field name="mask_font" type="xcb_font_t"/>
+            <field name="source_char" type="uint16_t"/>
+            <field name="mask_char" type="uint16_t"/>
+            <field name="fore_red" type="uint16_t"/>
+            <field name="fore_green" type="uint16_t"/>
+            <field name="fore_blue" type="uint16_t"/>
+            <field name="back_red" type="uint16_t"/>
+            <field name="back_green" type="uint16_t"/>
+            <field name="back_blue" type="uint16_t"/>
+        </xcb_create_glyph_cursor_request_t>
+        <xcb_free_cursor_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cursor" type="xcb_cursor_t"/>
+        </xcb_free_cursor_request_t>
+        <xcb_recolor_cursor_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="cursor" type="xcb_cursor_t"/>
+            <field name="fore_red" type="uint16_t"/>
+            <field name="fore_green" type="uint16_t"/>
+            <field name="fore_blue" type="uint16_t"/>
+            <field name="back_red" type="uint16_t"/>
+            <field name="back_green" type="uint16_t"/>
+            <field name="back_blue" type="uint16_t"/>
+        </xcb_recolor_cursor_request_t>
+        <xcb_query_best_size_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_best_size_cookie_t>
+        <xcb_query_best_size_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="_class" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="drawable" type="xcb_drawable_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+        </xcb_query_best_size_request_t>
+        <xcb_query_best_size_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="width" type="uint16_t"/>
+            <field name="height" type="uint16_t"/>
+        </xcb_query_best_size_reply_t>
+        <xcb_query_extension_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_query_extension_cookie_t>
+        <xcb_query_extension_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="name_len" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="2"/>
+        </xcb_query_extension_request_t>
+        <xcb_query_extension_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="present" type="uint8_t"/>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="first_event" type="uint8_t"/>
+            <field name="first_error" type="uint8_t"/>
+        </xcb_query_extension_reply_t>
+        <xcb_list_extensions_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_list_extensions_cookie_t>
+        <xcb_list_extensions_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_list_extensions_request_t>
+        <xcb_list_extensions_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="names_len" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="24"/>
+        </xcb_list_extensions_reply_t>
+        <xcb_change_keyboard_mapping_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="keycode_count" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="first_keycode" type="xcb_keycode_t"/>
+            <field name="keysyms_per_keycode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+        </xcb_change_keyboard_mapping_request_t>
+        <xcb_get_keyboard_mapping_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_keyboard_mapping_cookie_t>
+        <xcb_get_keyboard_mapping_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="first_keycode" type="xcb_keycode_t"/>
+            <field name="count" type="uint8_t"/>
+        </xcb_get_keyboard_mapping_request_t>
+        <xcb_get_keyboard_mapping_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="keysyms_per_keycode" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="24"/>
+        </xcb_get_keyboard_mapping_reply_t>
+        <xcb_change_keyboard_control_value_list_t>
+            <field name="key_click_percent" type="int32_t"/>
+            <field name="bell_percent" type="int32_t"/>
+            <field name="bell_pitch" type="int32_t"/>
+            <field name="bell_duration" type="int32_t"/>
+            <field name="led" type="uint32_t"/>
+            <field name="led_mode" type="uint32_t"/>
+            <field name="key" type="xcb_keycode32_t"/>
+            <field name="auto_repeat_mode" type="uint32_t"/>
+        </xcb_change_keyboard_control_value_list_t>
+        <xcb_change_keyboard_control_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="value_mask" type="uint32_t"/>
+        </xcb_change_keyboard_control_request_t>
+        <xcb_get_keyboard_control_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_keyboard_control_cookie_t>
+        <xcb_get_keyboard_control_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_get_keyboard_control_request_t>
+        <xcb_get_keyboard_control_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="global_auto_repeat" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="led_mask" type="uint32_t"/>
+            <field name="key_click_percent" type="uint8_t"/>
+            <field name="bell_percent" type="uint8_t"/>
+            <field name="bell_pitch" type="uint16_t"/>
+            <field name="bell_duration" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="2"/>
+            <field name="auto_repeats" type="uint8_t" len="32"/>
+        </xcb_get_keyboard_control_reply_t>
+        <xcb_bell_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="percent" type="int8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_bell_request_t>
+        <xcb_change_pointer_control_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="acceleration_numerator" type="int16_t"/>
+            <field name="acceleration_denominator" type="int16_t"/>
+            <field name="threshold" type="int16_t"/>
+            <field name="do_acceleration" type="uint8_t"/>
+            <field name="do_threshold" type="uint8_t"/>
+        </xcb_change_pointer_control_request_t>
+        <xcb_get_pointer_control_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_pointer_control_cookie_t>
+        <xcb_get_pointer_control_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_get_pointer_control_request_t>
+        <xcb_get_pointer_control_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="acceleration_numerator" type="uint16_t"/>
+            <field name="acceleration_denominator" type="uint16_t"/>
+            <field name="threshold" type="uint16_t"/>
+            <field name="pad1" type="uint8_t" len="18"/>
+        </xcb_get_pointer_control_reply_t>
+        <xcb_set_screen_saver_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="timeout" type="int16_t"/>
+            <field name="interval" type="int16_t"/>
+            <field name="prefer_blanking" type="uint8_t"/>
+            <field name="allow_exposures" type="uint8_t"/>
+        </xcb_set_screen_saver_request_t>
+        <xcb_get_screen_saver_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_screen_saver_cookie_t>
+        <xcb_get_screen_saver_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_get_screen_saver_request_t>
+        <xcb_get_screen_saver_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="timeout" type="uint16_t"/>
+            <field name="interval" type="uint16_t"/>
+            <field name="prefer_blanking" type="uint8_t"/>
+            <field name="allow_exposures" type="uint8_t"/>
+            <field name="pad1" type="uint8_t" len="18"/>
+        </xcb_get_screen_saver_reply_t>
+        <xcb_change_hosts_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="family" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="address_len" type="uint16_t"/>
+        </xcb_change_hosts_request_t>
+        <xcb_host_t>
+            <field name="family" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="address_len" type="uint16_t"/>
+        </xcb_host_t>
+        <xcb_host_iterator_t>
+            <field name="data" type="xcb_host_t"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_host_iterator_t>
+        <xcb_list_hosts_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_list_hosts_cookie_t>
+        <xcb_list_hosts_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_list_hosts_request_t>
+        <xcb_list_hosts_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="hosts_len" type="uint16_t"/>
+            <field name="pad0" type="uint8_t" len="22"/>
+        </xcb_list_hosts_reply_t>
+        <xcb_set_access_control_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_set_access_control_request_t>
+        <xcb_set_close_down_mode_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_set_close_down_mode_request_t>
+        <xcb_kill_client_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="resource" type="uint32_t"/>
+        </xcb_kill_client_request_t>
+        <xcb_rotate_properties_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+            <field name="window" type="xcb_window_t"/>
+            <field name="atoms_len" type="uint16_t"/>
+            <field name="delta" type="int16_t"/>
+        </xcb_rotate_properties_request_t>
+        <xcb_force_screen_saver_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="mode" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_force_screen_saver_request_t>
+        <xcb_set_pointer_mapping_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_set_pointer_mapping_cookie_t>
+        <xcb_set_pointer_mapping_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="map_len" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_set_pointer_mapping_request_t>
+        <xcb_set_pointer_mapping_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="status" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+        </xcb_set_pointer_mapping_reply_t>
+        <xcb_get_pointer_mapping_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_pointer_mapping_cookie_t>
+        <xcb_get_pointer_mapping_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_get_pointer_mapping_request_t>
+        <xcb_get_pointer_mapping_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="map_len" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="24"/>
+        </xcb_get_pointer_mapping_reply_t>
+        <xcb_set_modifier_mapping_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_set_modifier_mapping_cookie_t>
+        <xcb_set_modifier_mapping_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="keycodes_per_modifier" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_set_modifier_mapping_request_t>
+        <xcb_set_modifier_mapping_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="status" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+        </xcb_set_modifier_mapping_reply_t>
+        <xcb_get_modifier_mapping_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_get_modifier_mapping_cookie_t>
+        <xcb_get_modifier_mapping_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_get_modifier_mapping_request_t>
+        <xcb_get_modifier_mapping_reply_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="keycodes_per_modifier" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="pad0" type="uint8_t" len="24"/>
+        </xcb_get_modifier_mapping_reply_t>
+        <xcb_no_operation_request_t>
+            <field name="major_opcode" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="length" type="uint16_t"/>
+        </xcb_no_operation_request_t>
+
+        <xcb_void_cookie_t>
+            <field name="sequence" type="int"/>
+        </xcb_void_cookie_t>
+        <xcb_generic_iterator_t>
+            <field name="data" type="Pointer"/>
+            <field name="rem" type="int"/>
+            <field name="index" type="int"/>
+        </xcb_generic_iterator_t>
+        <xcb_generic_reply_t>
+            <field name="responseType" type="short"/>
+            <field name="pad0" type="short"/>
+            <field name="sequence" type="int"/>
+            <field name="length" type="NativeLong"/>
+        </xcb_generic_reply_t>
+        <xcb_generic_event_t>
+            <field name="responseType" type="short"/>
+            <field name="pad0" type="short"/>
+            <field name="sequence" type="int"/>
+            <field name="pad" type="NativeLong" len="7"/>
+            <field name="fullSequence" type="NativeLong"/>
+        </xcb_generic_event_t>
+        <xcb_raw_generic_event_t>
+            <field name="responseType" type="short"/>
+            <field name="pad0" type="short"/>
+            <field name="sequence" type="int"/>
+            <field name="pad" type="NativeLong" len="7"/>
+        </xcb_raw_generic_event_t>
+        <xcb_image_t>
+            <field name="width" type="int"/>
+            <field name="height" type="int"/>
+            <field name="format" type="int"/>
+            <field name="scanlinePad" type="short"/>
+            <field name="depth" type="short"/>
+            <field name="bpp" type="short"/>
+            <field name="unit" type="short"/>
+            <field name="planeMask" type="long"/>
+            <field name="byteOrder" type="int"/>
+            <field name="bitOrder" type="int"/>
+            <field name="stride" type="long"/>
+            <field name="size" type="long"/>
+            <field name="base" type="Pointer"/>
+            <field name="data" type="Pointer"/>
+        </xcb_image_t>
+        <xcb_ge_event_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="length" type="uint32_t"/>
+            <field name="event_type" type="uint16_t"/>
+            <field name="pad1" type="uint16_t"/>
+            <field name="full_sequence" type="uint32_t"/>
+            <field name="pad" type="uint32_t" len="5"/>
+        </xcb_ge_event_t>
+        <xcb_generic_error_t>
+            <field name="response_type" type="uint8_t"/>
+            <field name="error_code" type="uint8_t"/>
+            <field name="sequence" type="uint16_t"/>
+            <field name="resource_id" type="uint32_t"/>
+            <field name="minor_code" type="uint16_t"/>
+            <field name="major_code" type="uint8_t"/>
+            <field name="pad0" type="uint8_t"/>
+            <field name="full_sequence" type="uint32_t"/>
+            <field name="pad" type="uint32_t" len="5"/>
+        </xcb_generic_error_t>
+        <xcb_auth_info_t>
+            <field name="namelen" type="int"/>
+            <field name="name" type="String"/>
+            <field name="datalen" type="int"/>
+            <field name="data" type="String"/>
+        </xcb_auth_info_t>
+    </types>
+    <aliases>
+        <alias class="xcb_window_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_pixmap_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_atom_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_cursor_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_font_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_match_error_t" of="xcb_request_error_t"/>
+        <alias class="xcb_drawable_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_access_error_t" of="xcb_request_error_t"/>
+        <alias class="xcb_alloc_error_t" of="xcb_request_error_t"/>
+        <alias class="xcb_colormap_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_g_context_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_id_choice_error_t" of="xcb_value_error_t"/>
+        <alias class="xcb_name_error_t" of="xcb_request_error_t"/>
+        <alias class="xcb_length_error_t" of="xcb_request_error_t"/>
+        <alias class="xcb_implementation_error_t" of="xcb_request_error_t"/>
+        <alias class="xcb_button_t" of="uint8_t"/>
+        <alias class="xcb_keycode32_t" of="uint32_t"/>
+        <alias class="xcb_keycode_t" of="uint8_t"/>
+        <alias class="xcb_keysym_t" of="uint32_t"/>
+        <alias class="xcb_timestamp_t" of="uint32_t"/>
+        <alias class="xcb_visualid_t" of="uint32_t"/>
+        <alias class="xcb_fontable_t" of="uint32_t"/>
+        <alias class="xcb_window_t" of="uint32_t"/>
+        <alias class="xcb_pixmap_t" of="uint32_t"/>
+        <alias class="xcb_cursor_t" of="uint32_t"/>
+        <alias class="xcb_font_t" of="uint32_t"/>
+        <alias class="xcb_gcontext_t" of="uint32_t"/>
+        <alias class="xcb_colormap_t" of="uint32_t"/>
+        <alias class="xcb_atom_t" of="uint32_t"/>
+        <alias class="xcb_drawable_t" of="uint32_t"/>
+        <alias class="xcb_bool32_t" of="uint32_t"/>
+        <alias class="xcb_key_release_event_t" of="xcb_key_press_event_t"/>
+        <alias class="xcb_button_release_event_t" of="xcb_button_press_event_t"/>
+        <alias class="xcb_leave_notify_event_t" of="xcb_enter_notify_event_t"/>
+        <alias class="xcb_focus_out_event_t" of="xcb_focus_in_event_t"/>
+        <alias class="xcb_circulate_request_event_t" of="xcb_circulate_notify_event_t"/>
+        <alias class="xcb_special_event_t" of="PointerType"/>
+        <alias class="xcb_extension_t" of="PointerType"/>
+        <alias class="xcb_connection_t" of="PointerType"/>
+    </aliases>
+</xcb>

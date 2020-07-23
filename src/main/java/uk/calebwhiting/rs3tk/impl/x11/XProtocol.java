@@ -1,0 +1,693 @@
+package uk.calebwhiting.rs3tk.impl.x11;
+
+@SuppressWarnings("unused")
+public interface XProtocol {
+  int XCB_KEY_PRESS = 2;
+  int XCB_KEY_RELEASE = 3;
+  int XCB_BUTTON_PRESS = 4;
+  int XCB_BUTTON_RELEASE = 5;
+  int XCB_MOTION_NOTIFY = 6;
+  int XCB_ENTER_NOTIFY = 7;
+  int XCB_LEAVE_NOTIFY = 8;
+  int XCB_FOCUS_IN = 9;
+  int XCB_FOCUS_OUT = 10;
+  int XCB_KEYMAP_NOTIFY = 11;
+  int XCB_EXPOSE = 12;
+  int XCB_GRAPHICS_EXPOSURE = 13;
+  int XCB_NO_EXPOSURE = 14;
+  int XCB_VISIBILITY_NOTIFY = 15;
+  int XCB_CREATE_NOTIFY = 16;
+  int XCB_DESTROY_NOTIFY = 17;
+  int XCB_UNMAP_NOTIFY = 18;
+  int XCB_MAP_NOTIFY = 19;
+  int XCB_MAP_REQUEST = 20;
+  int XCB_REPARENT_NOTIFY = 21;
+  int XCB_CONFIGURE_NOTIFY = 22;
+  int XCB_CONFIGURE_REQUEST = 23;
+  int XCB_GRAVITY_NOTIFY = 24;
+  int XCB_RESIZE_REQUEST = 25;
+  int XCB_CIRCULATE_NOTIFY = 26;
+  int XCB_CIRCULATE_REQUEST = 27;
+  int XCB_PROPERTY_NOTIFY = 28;
+  int XCB_SELECTION_CLEAR = 29;
+  int XCB_SELECTION_REQUEST = 30;
+  int XCB_SELECTION_NOTIFY = 31;
+  int XCB_COLORMAP_NOTIFY = 32;
+  int XCB_CLIENT_MESSAGE = 33;
+  int XCB_MAPPING_NOTIFY = 34;
+  int XCB_GE_GENERIC = 35;
+  int XCB_REQUEST = 1;
+  int XCB_VALUE = 2;
+  int XCB_WINDOW = 3;
+  int XCB_PIXMAP = 4;
+  int XCB_ATOM = 5;
+  int XCB_CURSOR = 6;
+  int XCB_FONT = 7;
+  int XCB_MATCH = 8;
+  int XCB_DRAWABLE = 9;
+  int XCB_ACCESS = 10;
+  int XCB_ALLOC = 11;
+  int XCB_COLORMAP = 12;
+  int XCB_G_CONTEXT = 13;
+  int XCB_ID_CHOICE = 14;
+  int XCB_NAME = 15;
+  int XCB_LENGTH = 16;
+  int XCB_IMPLEMENTATION = 17;
+  int XCB_CREATE_WINDOW = 1;
+  int XCB_CHANGE_WINDOW_ATTRIBUTES = 2;
+  int XCB_GET_WINDOW_ATTRIBUTES = 3;
+  int XCB_DESTROY_WINDOW = 4;
+  int XCB_DESTROY_SUBWINDOWS = 5;
+  int XCB_CHANGE_SAVE_SET = 6;
+  int XCB_REPARENT_WINDOW = 7;
+  int XCB_MAP_WINDOW = 8;
+  int XCB_MAP_SUBWINDOWS = 9;
+  int XCB_UNMAP_WINDOW = 10;
+  int XCB_UNMAP_SUBWINDOWS = 11;
+  int XCB_CONFIGURE_WINDOW = 12;
+  int XCB_CIRCULATE_WINDOW = 13;
+  int XCB_GET_GEOMETRY = 14;
+  int QUERYREE = 15;
+  int XCB_INTERN_ATOM = 16;
+  int XCB_GET_ATOM_NAME = 17;
+  int XCB_CHANGE_PROPERTY = 18;
+  int XCB_DELETE_PROPERTY = 19;
+  int XCB_GET_PROPERTY = 20;
+  int XCB_LIST_PROPERTIES = 21;
+  int XCB_SET_SELECTION_OWNER = 22;
+  int XCB_GET_SELECTION_OWNER = 23;
+  int XCB_CONVERT_SELECTION = 24;
+  int XCB_SEND_EVENT = 25;
+  int XCB_GRAB_POINTER = 26;
+  int XCB_UNGRAB_POINTER = 27;
+  int XCB_GRAB_BUTTON = 28;
+  int XCB_UNGRAB_BUTTON = 29;
+  int XCB_CHANGE_ACTIVE_POINTER_GRAB = 30;
+  int XCB_GRAB_KEYBOARD = 31;
+  int XCB_UNGRAB_KEYBOARD = 32;
+  int XCB_GRAB_KEY = 33;
+  int XCB_UNGRAB_KEY = 34;
+  int XCB_ALLOW_EVENTS = 35;
+  int XCB_GRAB_SERVER = 36;
+  int XCB_UNGRAB_SERVER = 37;
+  int XCB_QUERY_POINTER = 38;
+  int XCB_GET_MOTION_EVENTS = 39;
+  int XCB_TRANSLATE_COORDINATES = 40;
+  int XCB_WARP_POINTER = 41;
+  int XCB_SET_INPUT_FOCUS = 42;
+  int XCB_GET_INPUT_FOCUS = 43;
+  int XCB_QUERY_KEYMAP = 44;
+  int XCB_OPEN_FONT = 45;
+  int XCB_CLOSE_FONT = 46;
+  int XCB_QUERY_FONT = 47;
+  int QUERYEXT_EXTENTS = 48;
+  int XCB_LIST_FONTS = 49;
+  int XCB_LIST_FONTS_WITH_INFO = 50;
+  int XCB_SET_FONT_PATH = 51;
+  int XCB_GET_FONT_PATH = 52;
+  int XCB_CREATE_PIXMAP = 53;
+  int XCB_FREE_PIXMAP = 54;
+  int XCB_CREATE_GC = 55;
+  int XCB_CHANGE_GC = 56;
+  int XCB_COPY_GC = 57;
+  int XCB_SET_DASHES = 58;
+  int XCB_SET_CLIP_RECTANGLES = 59;
+  int XCB_FREE_GC = 60;
+  int XCB_CLEAR_AREA = 61;
+  int XCB_COPY_AREA = 62;
+  int XCB_COPY_PLANE = 63;
+  int XCB_POLY_POINT = 64;
+  int XCB_POLY_LINE = 65;
+  int XCB_POLY_SEGMENT = 66;
+  int XCB_POLY_RECTANGLE = 67;
+  int XCB_POLY_ARC = 68;
+  int XCB_FILL_POLY = 69;
+  int XCB_POLY_FILL_RECTANGLE = 70;
+  int XCB_POLY_FILL_ARC = 71;
+  int XCB_PUT_IMAGE = 72;
+  int XCB_GET_IMAGE = 73;
+  int POLYEXT_8 = 74;
+  int POLYEXT_16 = 75;
+  int IMAGEEXT_8 = 76;
+  int IMAGEEXT_16 = 77;
+  int XCB_CREATE_COLORMAP = 78;
+  int XCB_FREE_COLORMAP = 79;
+  int XCB_COPY_COLORMAP_AND_FREE = 80;
+  int XCB_INSTALL_COLORMAP = 81;
+  int XCB_UNINSTALL_COLORMAP = 82;
+  int XCB_LIST_INSTALLED_COLORMAPS = 83;
+  int XCB_ALLOC_COLOR = 84;
+  int XCB_ALLOC_NAMED_COLOR = 85;
+  int XCB_ALLOC_COLOR_CELLS = 86;
+  int XCB_ALLOC_COLOR_PLANES = 87;
+  int XCB_FREE_COLORS = 88;
+  int XCB_STORE_COLORS = 89;
+  int XCB_STORE_NAMED_COLOR = 90;
+  int XCB_QUERY_COLORS = 91;
+  int XCB_LOOKUP_COLOR = 92;
+  int XCB_CREATE_CURSOR = 93;
+  int XCB_CREATE_GLYPH_CURSOR = 94;
+  int XCB_FREE_CURSOR = 95;
+  int XCB_RECOLOR_CURSOR = 96;
+  int XCB_QUERY_BEST_SIZE = 97;
+  int XCB_QUERY_EXTENSION = 98;
+  int XCB_LIST_EXTENSIONS = 99;
+  int XCB_CHANGE_KEYBOARD_MAPPING = 100;
+  int XCB_GET_KEYBOARD_MAPPING = 101;
+  int XCB_CHANGE_KEYBOARD_CONTROL = 102;
+  int XCB_GET_KEYBOARD_CONTROL = 103;
+  int XCB_BELL = 104;
+  int XCB_CHANGE_POINTER_CONTROL = 105;
+  int XCB_GET_POINTER_CONTROL = 106;
+  int XCB_SET_SCREEN_SAVER = 107;
+  int XCB_GET_SCREEN_SAVER = 108;
+  int XCB_CHANGE_HOSTS = 109;
+  int XCB_LIST_HOSTS = 110;
+  int XCB_SET_ACCESS_CONTROL = 111;
+  int XCB_SET_CLOSE_DOWN_MODE = 112;
+  int XCB_KILL_CLIENT = 113;
+  int XCB_ROTATE_PROPERTIES = 114;
+  int XCB_FORCE_SCREEN_SAVER = 115;
+  int XCB_SET_POINTER_MAPPING = 116;
+  int XCB_GET_POINTER_MAPPING = 117;
+  int XCB_SET_MODIFIER_MAPPING = 118;
+  int XCB_GET_MODIFIER_MAPPING = 119;
+  int XCB_NO_OPERATION = 127;
+
+  interface VisualClass {
+    int XCB_VISUAL_CLASS_STATIC_GRAY = 0;
+    int XCB_VISUAL_CLASS_GRAY_SCALE = 1;
+    int XCB_VISUAL_CLASS_STATIC_COLOR = 2;
+    int XCB_VISUAL_CLASS_PSEUDO_COLOR = 3;
+    int XCB_VISUAL_CLASS_TRUE_COLOR = 4;
+    int XCB_VISUAL_CLASS_DIRECT_COLOR = 5;
+  }
+  interface EventMask {
+    int XCB_EVENT_MASK_NO_EVENT = 0;
+    int XCB_EVENT_MASK_KEY_PRESS = 1;
+    int XCB_EVENT_MASK_KEY_RELEASE = 2;
+    int XCB_EVENT_MASK_BUTTON_PRESS = 4;
+    int XCB_EVENT_MASK_BUTTON_RELEASE = 8;
+    int XCB_EVENT_MASK_ENTER_WINDOW = 16;
+    int XCB_EVENT_MASK_LEAVE_WINDOW = 32;
+    int XCB_EVENT_MASK_POINTER_MOTION = 64;
+    int XCB_EVENT_MASK_POINTER_MOTION_HINT = 128;
+    int XCB_EVENT_MASK_BUTTON_1_MOTION = 256;
+    int XCB_EVENT_MASK_BUTTON_2_MOTION = 512;
+    int XCB_EVENT_MASK_BUTTON_3_MOTION = 1024;
+    int XCB_EVENT_MASK_BUTTON_4_MOTION = 2048;
+    int XCB_EVENT_MASK_BUTTON_5_MOTION = 4096;
+    int XCB_EVENT_MASK_BUTTON_MOTION = 8192;
+    int XCB_EVENT_MASK_KEYMAP_STATE = 16384;
+    int XCB_EVENT_MASK_EXPOSURE = 32768;
+    int XCB_EVENT_MASK_VISIBILITY_CHANGE = 65536;
+    int XCB_EVENT_MASK_STRUCTURE_NOTIFY = 131072;
+    int XCB_EVENT_MASK_RESIZE_REDIRECT = 262144;
+    int XCB_EVENT_MASK_SUBSTRUCTURE_NOTIFY = 524288;
+    int XCB_EVENT_MASK_SUBSTRUCTURE_REDIRECT = 1048576;
+    int XCB_EVENT_MASK_FOCUS_CHANGE = 2097152;
+    int XCB_EVENT_MASK_PROPERTY_CHANGE = 4194304;
+    int XCB_EVENT_MASK_COLOR_MAP_CHANGE = 8388608;
+    int XCB_EVENT_MASK_OWNER_GRAB_BUTTON = 16777216;
+  }
+  interface BackingStore {
+    int XCB_BACKING_STORE_NOT_USEFUL = 0;
+    int XCB_BACKING_STORE_WHEN_MAPPED = 1;
+    int XCB_BACKING_STORE_ALWAYS = 2;
+  }
+  interface ImageOrder {
+    int XCB_IMAGE_ORDER_LSB_FIRST = 0;
+    int XCB_IMAGE_ORDER_MSB_FIRST = 1;
+  }
+  interface ModMask {
+    int XCB_MOD_MASK_SHIFT = 1;
+    int XCB_MOD_MASK_LOCK = 2;
+    int XCB_MOD_MASK_CONTROL = 4;
+    int XCB_MOD_MASK_1 = 8;
+    int XCB_MOD_MASK_2 = 16;
+    int XCB_MOD_MASK_3 = 32;
+    int XCB_MOD_MASK_4 = 64;
+    int XCB_MOD_MASK_5 = 128;
+    int XCB_MOD_MASK_ANY = 32768;
+  }
+  interface KeyButMask {
+    int XCB_KEY_BUT_MASK_SHIFT = 1;
+    int XCB_KEY_BUT_MASK_LOCK = 2;
+    int XCB_KEY_BUT_MASK_CONTROL = 4;
+    int XCB_KEY_BUT_MASK_MOD_1 = 8;
+    int XCB_KEY_BUT_MASK_MOD_2 = 16;
+    int XCB_KEY_BUT_MASK_MOD_3 = 32;
+    int XCB_KEY_BUT_MASK_MOD_4 = 64;
+    int XCB_KEY_BUT_MASK_MOD_5 = 128;
+    int XCB_KEY_BUT_MASK_BUTTON_1 = 256;
+    int XCB_KEY_BUT_MASK_BUTTON_2 = 512;
+    int XCB_KEY_BUT_MASK_BUTTON_3 = 1024;
+    int XCB_KEY_BUT_MASK_BUTTON_4 = 2048;
+    int XCB_KEY_BUT_MASK_BUTTON_5 = 4096;
+  }
+  interface WindowEnum {
+    int XCB_WINDOW_NONE = 0;
+  }
+  interface ButtonMask {
+    int XCB_BUTTON_MASK_1 = 256;
+    int XCB_BUTTON_MASK_2 = 512;
+    int XCB_BUTTON_MASK_3 = 1024;
+    int XCB_BUTTON_MASK_4 = 2048;
+    int XCB_BUTTON_MASK_5 = 4096;
+    int XCB_BUTTON_MASK_ANY = 32768;
+  }
+  interface Motion {
+    int XCB_MOTION_NORMAL = 0;
+    int XCB_MOTION_HINT = 1;
+  }
+  interface NotifyDetail {
+    int XCB_NOTIFY_DETAIL_ANCESTOR = 0;
+    int XCB_NOTIFY_DETAIL_VIRTUAL = 1;
+    int XCB_NOTIFY_DETAIL_INFERIOR = 2;
+    int XCB_NOTIFY_DETAIL_NONLINEAR = 3;
+    int XCB_NOTIFY_DETAIL_NONLINEAR_VIRTUAL = 4;
+    int XCB_NOTIFY_DETAIL_POINTER = 5;
+    int XCB_NOTIFY_DETAIL_POINTER_ROOT = 6;
+    int XCB_NOTIFY_DETAIL_NONE = 7;
+  }
+  interface NotifyMode {
+    int XCB_NOTIFY_MODE_NORMAL = 0;
+    int XCB_NOTIFY_MODE_GRAB = 1;
+    int XCB_NOTIFY_MODE_UNGRAB = 2;
+    int XCB_NOTIFY_MODE_WHILE_GRABBED = 3;
+  }
+  interface Visibility {
+    int XCB_VISIBILITY_UNOBSCURED = 0;
+    int XCB_VISIBILITY_PARTIALLY_OBSCURED = 1;
+    int XCB_VISIBILITY_FULLY_OBSCURED = 2;
+  }
+  interface Place {
+    int XCB_PLACE_ON_TOP = 0;
+    int XCB_PLACE_ON_BOTTOM = 1;
+  }
+  interface Property {
+    int XCB_PROPERTY_NEW_VALUE = 0;
+    int XCB_PROPERTY_DELETE = 1;
+  }
+  interface Time {
+    int XCB_TIME_CURRENT_TIME = 0;
+  }
+  interface AtomEnum {
+    int XCB_ATOM_NONE = 0;
+    int XCB_ATOM_ANY = 0;
+    int XCB_ATOM_PRIMARY = 1;
+    int XCB_ATOM_SECONDARY = 2;
+    int XCB_ATOM_ARC = 3;
+    int XCB_ATOM_ATOM = 4;
+    int XCB_ATOM_BITMAP = 5;
+    int XCB_ATOM_CARDINAL = 6;
+    int XCB_ATOM_COLORMAP = 7;
+    int XCB_ATOM_CURSOR = 8;
+    int XCB_ATOM_CUT_BUFFER0 = 9;
+    int XCB_ATOM_CUT_BUFFER1 = 10;
+    int XCB_ATOM_CUT_BUFFER2 = 11;
+    int XCB_ATOM_CUT_BUFFER3 = 12;
+    int XCB_ATOM_CUT_BUFFER4 = 13;
+    int XCB_ATOM_CUT_BUFFER5 = 14;
+    int XCB_ATOM_CUT_BUFFER6 = 15;
+    int XCB_ATOM_CUT_BUFFER7 = 16;
+    int XCB_ATOM_DRAWABLE = 17;
+    int XCB_ATOM_FONT = 18;
+    int XCB_ATOM_INTEGER = 19;
+    int XCB_ATOM_PIXMAP = 20;
+    int XCB_ATOM_POINT = 21;
+    int XCB_ATOM_RECTANGLE = 22;
+    int XCB_ATOM_RESOURCE_MANAGER = 23;
+    int XCB_ATOM_RGB_COLOR_MAP = 24;
+    int XCB_ATOM_RGB_BEST_MAP = 25;
+    int XCB_ATOM_RGB_BLUE_MAP = 26;
+    int XCB_ATOM_RGB_DEFAULT_MAP = 27;
+    int XCB_ATOM_RGB_GRAY_MAP = 28;
+    int XCB_ATOM_RGB_GREEN_MAP = 29;
+    int XCB_ATOM_RGB_RED_MAP = 30;
+    int XCB_ATOM_STRING = 31;
+    int XCB_ATOM_VISUALID = 32;
+    int XCB_ATOM_WINDOW = 33;
+    int XCB_ATOM_WM_COMMAND = 34;
+    int XCB_ATOM_WM_HINTS = 35;
+    int XCB_ATOM_WM_CLIENT_MACHINE = 36;
+    int XCB_ATOM_WM_ICON_NAME = 37;
+    int XCB_ATOM_WM_ICON_SIZE = 38;
+    int XCB_ATOM_WM_NAME = 39;
+    int XCB_ATOM_WM_NORMAL_HINTS = 40;
+    int XCB_ATOM_WM_SIZE_HINTS = 41;
+    int XCB_ATOM_WM_ZOOM_HINTS = 42;
+    int XCB_ATOM_MIN_SPACE = 43;
+    int XCB_ATOM_NORM_SPACE = 44;
+    int XCB_ATOM_MAX_SPACE = 45;
+    int XCB_ATOM_END_SPACE = 46;
+    int XCB_ATOM_SUPERSCRIPT_X = 47;
+    int XCB_ATOM_SUPERSCRIPT_Y = 48;
+    int XCB_ATOM_SUBSCRIPT_X = 49;
+    int XCB_ATOM_SUBSCRIPT_Y = 50;
+    int XCB_ATOM_UNDERLINE_POSITION = 51;
+    int XCB_ATOM_UNDERLINE_THICKNESS = 52;
+    int XCB_ATOM_STRIKEOUT_ASCENT = 53;
+    int XCB_ATOM_STRIKEOUT_DESCENT = 54;
+    int XCB_ATOM_ITALIC_ANGLE = 55;
+    int XCB_ATOM_X_HEIGHT = 56;
+    int XCB_ATOM_QUAD_WIDTH = 57;
+    int XCB_ATOM_WEIGHT = 58;
+    int XCB_ATOM_POINT_SIZE = 59;
+    int XCB_ATOM_RESOLUTION = 60;
+    int XCB_ATOM_COPYRIGHT = 61;
+    int XCB_ATOM_NOTICE = 62;
+    int XCB_ATOM_FONT_NAME = 63;
+    int XCB_ATOM_FAMILY_NAME = 64;
+    int XCB_ATOM_FULL_NAME = 65;
+    int XCB_ATOM_CAP_HEIGHT = 66;
+    int XCB_ATOM_WM_CLASS = 67;
+    int XCB_ATOM_WM_TRANSIENT_FOR = 68;
+  }
+  interface ColormapState {
+    int XCB_COLORMAP_STATE_UNINSTALLED = 0;
+    int XCB_COLORMAP_STATE_INSTALLED = 1;
+  }
+  interface ColormapEnum {
+    int XCB_COLORMAP_NONE = 0;
+  }
+  interface Mapping {
+    int XCB_MAPPING_MODIFIER = 0;
+    int XCB_MAPPING_KEYBOARD = 1;
+    int XCB_MAPPING_POINTER = 2;
+  }
+  interface WindowClass {
+    int XCB_WINDOW_CLASS_COPY_FROM_PARENT = 0;
+    int XCB_WINDOW_CLASS_INPUT_OUTPUT = 1;
+    int XCB_WINDOW_CLASS_INPUT_ONLY = 2;
+  }
+  interface Cw {
+    int XCB_CW_BACK_PIXMAP = 1;
+    int XCB_CW_BACK_PIXEL = 2;
+    int XCB_CW_BORDER_PIXMAP = 4;
+    int XCB_CW_BORDER_PIXEL = 8;
+    int XCB_CW_BIT_GRAVITY = 16;
+    int XCB_CW_WIN_GRAVITY = 32;
+    int XCB_CW_BACKING_STORE = 64;
+    int XCB_CW_BACKING_PLANES = 128;
+    int XCB_CW_BACKING_PIXEL = 256;
+    int XCB_CW_OVERRIDE_REDIRECT = 512;
+    int XCB_CW_SAVE_UNDER = 1024;
+    int XCB_CW_EVENT_MASK = 2048;
+    int XCB_CW_DONT_PROPAGATE = 4096;
+    int XCB_CW_COLORMAP = 8192;
+    int XCB_CW_CURSOR = 16384;
+  }
+  interface BackPixmap {
+    int XCB_BACK_PIXMAP_NONE = 0;
+    int XCB_BACK_PIXMAP_PARENT_RELATIVE = 1;
+  }
+  interface Gravity {
+    int XCB_GRAVITY_BIT_FORGET = 0;
+    int XCB_GRAVITY_WIN_UNMAP = 0;
+    int XCB_GRAVITY_NORTH_WEST = 1;
+    int XCB_GRAVITY_NORTH = 2;
+    int XCB_GRAVITY_NORTH_EAST = 3;
+    int XCB_GRAVITY_WEST = 4;
+    int XCB_GRAVITY_CENTER = 5;
+    int XCB_GRAVITY_EAST = 6;
+    int XCB_GRAVITY_SOUTH_WEST = 7;
+    int XCB_GRAVITY_SOUTH = 8;
+    int XCB_GRAVITY_SOUTH_EAST = 9;
+    int XCB_GRAVITY_STATIC = 10;
+  }
+  interface MapState {
+    int XCB_MAP_STATE_UNMAPPED = 0;
+    int XCB_MAP_STATE_UNVIEWABLE = 1;
+    int XCB_MAP_STATE_VIEWABLE = 2;
+  }
+  interface SetMode {
+    int XCB_SET_MODE_INSERT = 0;
+    int XCB_SET_MODE_DELETE = 1;
+  }
+  interface ConfigWindow {
+    int XCB_CONFIG_WINDOW_X = 1;
+    int XCB_CONFIG_WINDOW_Y = 2;
+    int XCB_CONFIG_WINDOW_WIDTH = 4;
+    int XCB_CONFIG_WINDOW_HEIGHT = 8;
+    int XCB_CONFIG_WINDOW_BORDER_WIDTH = 16;
+    int XCB_CONFIG_WINDOW_SIBLING = 32;
+    int XCB_CONFIG_WINDOW_STACK_MODE = 64;
+  }
+  interface StackMode {
+    int XCB_STACK_MODE_ABOVE = 0;
+    int XCB_STACK_MODE_BELOW = 1;
+    int XCB_STACK_MODE_TOP_IF = 2;
+    int XCB_STACK_MODE_BOTTOM_IF = 3;
+    int XCB_STACK_MODE_OPPOSITE = 4;
+  }
+  interface Circulate {
+    int XCB_CIRCULATE_RAISE_LOWEST = 0;
+    int XCB_CIRCULATE_LOWER_HIGHEST = 1;
+  }
+  interface PropMode {
+    int XCB_PROP_MODE_REPLACE = 0;
+    int XCB_PROP_MODE_PREPEND = 1;
+    int XCB_PROP_MODE_APPEND = 2;
+  }
+  interface GetPropertyType {
+    int XCB_GET_PROPERTY_TYPE_ANY = 0;
+  }
+  interface SendEventDest {
+    int XCB_SEND_EVENT_DEST_POINTER_WINDOW = 0;
+    int XCB_SEND_EVENT_DEST_ITEM_FOCUS = 1;
+  }
+  interface GrabMode {
+    int XCB_GRAB_MODE_SYNC = 0;
+    int XCB_GRAB_MODE_ASYNC = 1;
+  }
+  interface GrabStatus {
+    int XCB_GRAB_STATUS_SUCCESS = 0;
+    int XCB_GRAB_STATUS_ALREADY_GRABBED = 1;
+    int XCB_GRAB_STATUS_INVALID_TIME = 2;
+    int XCB_GRAB_STATUS_NOT_VIEWABLE = 3;
+    int XCB_GRAB_STATUS_FROZEN = 4;
+  }
+  interface CursorEnum {
+    int XCB_CURSOR_NONE = 0;
+  }
+  interface ButtonIndex {
+    int XCB_BUTTON_INDEX_ANY = 0;
+    int XCB_BUTTON_INDEX_1 = 1;
+    int XCB_BUTTON_INDEX_2 = 2;
+    int XCB_BUTTON_INDEX_3 = 3;
+    int XCB_BUTTON_INDEX_4 = 4;
+    int XCB_BUTTON_INDEX_5 = 5;
+  }
+  interface Grab {
+    int XCB_GRAB_ANY = 0;
+  }
+  interface Allow {
+    int XCB_ALLOW_ASYNC_POINTER = 0;
+    int XCB_ALLOW_SYNC_POINTER = 1;
+    int XCB_ALLOW_REPLAY_POINTER = 2;
+    int XCB_ALLOW_ASYNC_KEYBOARD = 3;
+    int XCB_ALLOW_SYNC_KEYBOARD = 4;
+    int XCB_ALLOW_REPLAY_KEYBOARD = 5;
+    int XCB_ALLOW_ASYNC_BOTH = 6;
+    int XCB_ALLOW_SYNC_BOTH = 7;
+  }
+  interface InputFocus {
+    int XCB_INPUT_FOCUS_NONE = 0;
+    int XCB_INPUT_FOCUS_POINTER_ROOT = 1;
+    int XCB_INPUT_FOCUS_PARENT = 2;
+    int XCB_INPUT_FOCUS_FOLLOW_KEYBOARD = 3;
+  }
+  interface FontDraw {
+    int XCB_FONT_DRAW_LEFT_TO_RIGHT = 0;
+    int XCB_FONT_DRAW_RIGHT_TO_LEFT = 1;
+  }
+  interface Gc {
+    int XCB_GC_FUNCTION = 1;
+    int XCB_GC_PLANE_MASK = 2;
+    int XCB_GC_FOREGROUND = 4;
+    int XCB_GC_BACKGROUND = 8;
+    int XCB_GC_LINE_WIDTH = 16;
+    int XCB_GC_LINE_STYLE = 32;
+    int XCB_GC_CAP_STYLE = 64;
+    int XCB_GC_JOIN_STYLE = 128;
+    int XCB_GC_FILL_STYLE = 256;
+    int XCB_GC_FILL_RULE = 512;
+    int GCILE = 1024;
+    int XCB_GC_STIPPLE = 2048;
+    int GCILE_STIPPLE_ORIGIN_X = 4096;
+    int GCILE_STIPPLE_ORIGIN_Y = 8192;
+    int XCB_GC_FONT = 16384;
+    int XCB_GC_SUBWINDOW_MODE = 32768;
+    int XCB_GC_GRAPHICS_EXPOSURES = 65536;
+    int XCB_GC_CLIP_ORIGIN_X = 131072;
+    int XCB_GC_CLIP_ORIGIN_Y = 262144;
+    int XCB_GC_CLIP_MASK = 524288;
+    int XCB_GC_DASH_OFFSET = 1048576;
+    int XCB_GC_DASH_LIST = 2097152;
+    int XCB_GC_ARC_MODE = 4194304;
+  }
+  interface Gx {
+    int XCB_GX_CLEAR = 0;
+    int XCB_GX_AND = 1;
+    int XCB_GX_AND_REVERSE = 2;
+    int XCB_GX_COPY = 3;
+    int XCB_GX_AND_INVERTED = 4;
+    int XCB_GX_NOOP = 5;
+    int XCB_GX_XOR = 6;
+    int XCB_GX_OR = 7;
+    int XCB_GX_NOR = 8;
+    int XCB_GX_EQUIV = 9;
+    int XCB_GX_INVERT = 10;
+    int XCB_GX_OR_REVERSE = 11;
+    int XCB_GX_COPY_INVERTED = 12;
+    int XCB_GX_OR_INVERTED = 13;
+    int XCB_GX_NAND = 14;
+    int XCB_GX_SET = 15;
+  }
+  interface LineStyle {
+    int XCB_LINE_STYLE_SOLID = 0;
+    int XCB_LINE_STYLE_ON_OFF_DASH = 1;
+    int XCB_LINE_STYLE_DOUBLE_DASH = 2;
+  }
+  interface CapStyle {
+    int XCB_CAP_STYLE_NOT_LAST = 0;
+    int XCB_CAP_STYLE_BUTT = 1;
+    int XCB_CAP_STYLE_ROUND = 2;
+    int XCB_CAP_STYLE_PROJECTING = 3;
+  }
+  interface JoinStyle {
+    int XCB_JOIN_STYLE_MITER = 0;
+    int XCB_JOIN_STYLE_ROUND = 1;
+    int XCB_JOIN_STYLE_BEVEL = 2;
+  }
+  interface FillStyle {
+    int XCB_FILL_STYLE_SOLID = 0;
+    int XCB_FILL_STYLE_TILED = 1;
+    int XCB_FILL_STYLE_STIPPLED = 2;
+    int XCB_FILL_STYLE_OPAQUE_STIPPLED = 3;
+  }
+  interface FillRule {
+    int XCB_FILL_RULE_EVEN_ODD = 0;
+    int XCB_FILL_RULE_WINDING = 1;
+  }
+  interface SubwindowMode {
+    int XCB_SUBWINDOW_MODE_CLIP_BY_CHILDREN = 0;
+    int XCB_SUBWINDOW_MODE_INCLUDE_INFERIORS = 1;
+  }
+  interface ArcMode {
+    int XCB_ARC_MODE_CHORD = 0;
+    int XCB_ARC_MODE_PIE_SLICE = 1;
+  }
+  interface ClipOrdering {
+    int XCB_CLIP_ORDERING_UNSORTED = 0;
+    int XCB_CLIP_ORDERING_Y_SORTED = 1;
+    int XCB_CLIP_ORDERING_YX_SORTED = 2;
+    int XCB_CLIP_ORDERING_YX_BANDED = 3;
+  }
+  interface CoordMode {
+    int XCB_COORD_MODE_ORIGIN = 0;
+    int XCB_COORD_MODE_PREVIOUS = 1;
+  }
+  interface PolyShape {
+    int XCB_POLY_SHAPE_COMPLEX = 0;
+    int XCB_POLY_SHAPE_NONCONVEX = 1;
+    int XCB_POLY_SHAPE_CONVEX = 2;
+  }
+  interface ImageFormat {
+    int XCB_IMAGE_FORMAT_XY_BITMAP = 0;
+    int XCB_IMAGE_FORMAT_XY_PIXMAP = 1;
+    int XCB_IMAGE_FORMAT_Z_PIXMAP = 2;
+  }
+  interface ColormapAlloc {
+    int XCB_COLORMAP_ALLOC_NONE = 0;
+    int XCB_COLORMAP_ALLOC_ALL = 1;
+  }
+  interface ColorFlag {
+    int XCB_COLOR_FLAG_RED = 1;
+    int XCB_COLOR_FLAG_GREEN = 2;
+    int XCB_COLOR_FLAG_BLUE = 4;
+  }
+  interface PixmapEnum {
+    int XCB_PIXMAP_NONE = 0;
+  }
+  interface FontEnum {
+    int XCB_FONT_NONE = 0;
+  }
+  interface QueryShapeOf {
+    int XCB_QUERY_SHAPE_OF_LARGEST_CURSOR = 0;
+    int XCB_QUERY_SHAPE_OF_FASTEST_TILE = 1;
+    int XCB_QUERY_SHAPE_OF_FASTEST_STIPPLE = 2;
+  }
+  interface Kb {
+    int XCB_KB_KEY_CLICK_PERCENT = 1;
+    int XCB_KB_BELL_PERCENT = 2;
+    int XCB_KB_BELL_PITCH = 4;
+    int XCB_KB_BELL_DURATION = 8;
+    int XCB_KB_LED = 16;
+    int XCB_KB_LED_MODE = 32;
+    int XCB_KB_KEY = 64;
+    int XCB_KB_AUTO_REPEAT_MODE = 128;
+  }
+  interface LedMode {
+    int XCB_LED_MODE_OFF = 0;
+    int XCB_LED_MODE_ON = 1;
+  }
+  interface AutoRepeatMode {
+    int XCB_AUTO_REPEAT_MODE_OFF = 0;
+    int XCB_AUTO_REPEAT_MODE_ON = 1;
+    int XCB_AUTO_REPEAT_MODE_DEFAULT = 2;
+  }
+  interface Blanking {
+    int XCB_BLANKING_NOT_PREFERRED = 0;
+    int XCB_BLANKING_PREFERRED = 1;
+    int XCB_BLANKING_DEFAULT = 2;
+  }
+  interface Exposures {
+    int XCB_EXPOSURES_NOT_ALLOWED = 0;
+    int XCB_EXPOSURES_ALLOWED = 1;
+    int XCB_EXPOSURES_DEFAULT = 2;
+  }
+  interface HostMode {
+    int XCB_HOST_MODE_INSERT = 0;
+    int XCB_HOST_MODE_DELETE = 1;
+  }
+  interface Family {
+    int XCB_FAMILY_INTERNET = 0;
+    int XCB_FAMILY_DECNET = 1;
+    int XCB_FAMILY_CHAOS = 2;
+    int XCB_FAMILY_SERVER_INTERPRETED = 5;
+    int XCB_FAMILY_INTERNET_6 = 6;
+  }
+  interface AccessControl {
+    int XCB_ACCESS_CONTROL_DISABLE = 0;
+    int XCB_ACCESS_CONTROL_ENABLE = 1;
+  }
+  interface CloseDown {
+    int XCB_CLOSE_DOWN_DESTROY_ALL = 0;
+    int XCB_CLOSE_DOWN_RETAIN_PERMANENT = 1;
+    int XCB_CLOSE_DOWN_RETAIN_TEMPORARY = 2;
+  }
+  interface Kill {
+    int XCB_KILL_ALL_TEMPORARY = 0;
+  }
+  interface ScreenSaver {
+    int XCB_SCREEN_SAVER_RESET = 0;
+    int XCB_SCREEN_SAVER_ACTIVE = 1;
+  }
+  interface MappingStatus {
+    int XCB_MAPPING_STATUS_SUCCESS = 0;
+    int XCB_MAPPING_STATUS_BUSY = 1;
+    int XCB_MAPPING_STATUS_FAILURE = 2;
+  }
+  interface MapIndex {
+    int XCB_MAP_INDEX_SHIFT = 0;
+    int XCB_MAP_INDEX_LOCK = 1;
+    int XCB_MAP_INDEX_CONTROL = 2;
+    int XCB_MAP_INDEX_1 = 3;
+    int XCB_MAP_INDEX_2 = 4;
+    int XCB_MAP_INDEX_3 = 5;
+    int XCB_MAP_INDEX_4 = 6;
+    int XCB_MAP_INDEX_5 = 7;
+  }
+}

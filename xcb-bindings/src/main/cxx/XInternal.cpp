@@ -203,12 +203,7 @@ Java_org_freedesktop_xcb_internal_X_get_1property(JNIEnv* env, jclass, jlong _c,
   }
   xcb_window_t xid = (xcb_window_t) _xid;
   auto* cookie = new xcb_get_property_cookie_t();
-  *cookie = xcb_get_property(
-                c, xid, _delete,
-                (xcb_atom_t) _property,
-                (xcb_atom_t) _type,
-                _offset,
-                _length);
+  *cookie = xcb_get_property(c, _delete, xid,_property,_type,_offset,_length);
   return (uintptr_t) cookie;
 }
 
@@ -230,7 +225,7 @@ Java_org_freedesktop_xcb_internal_X_get_1property_1reply(JNIEnv* env, jclass, jl
   }
 
   xcb_generic_error_t* e;
-  auto* reply = xcb_get_property_reply(c, *cookie, nullptr);
+  auto* reply = xcb_get_property_reply(c, *cookie, &e);
 
   if (e) {
     WARN("Java_org_freedesktop_xcb_internal_X_get_1property_1reply:xcb_generic_error:" << xcb_error_name(e));

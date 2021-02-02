@@ -6,7 +6,7 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /usr/share/ECM/find-modules/)
 
 set(JAVA_HOME /usr/lib/jvm/java-14-openjdk-amd64/)
-# add_compile_definitions(DEBUG)
+add_compile_definitions(DEBUG)
 
 # Show all warnings
 if(MSVC)

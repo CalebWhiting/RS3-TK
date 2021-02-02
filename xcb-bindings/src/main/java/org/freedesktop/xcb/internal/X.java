@@ -40,7 +40,9 @@ public class X {
 
     public static void checkError(String func, long[] err) {
         if (err[0] == 0) return;
-        throw new XcbError(func);
+        throw new XcbError(func +
+                "/response_type=" + X.GenericError.response_type(err[0]) +
+                "/error_code=" + X.GenericError.error_code(err[0]));
     }
 
 	public static native long connect(String displayName, int[] screen);

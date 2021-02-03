@@ -10,4 +10,10 @@ public class NativeUtils {
 
     public static native void free(long pointer);
 
+    public static void free(long... pointers) {
+        for (long pointer : pointers) {
+            if (pointer != 0) free(pointer);
+        }
+    }
+
 }

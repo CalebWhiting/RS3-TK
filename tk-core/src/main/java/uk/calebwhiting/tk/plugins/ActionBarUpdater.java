@@ -18,6 +18,8 @@ import java.util.List;
 @Plugin(name = "Action Bar Updater", version = 1.0)
 public class ActionBarUpdater {
 
+    public static final String KEY_ACTIONBAR_RECT = "ActionBar.Rect";
+
     private static final Scalar CYAN = new Scalar(0, 150, 255);
 
     private final List<Mat[]> actionBarTemplates = new LinkedList<>();
@@ -33,18 +35,13 @@ public class ActionBarUpdater {
         Imgcodecs.imwrite(name + "-dump.bmp", mat);
 
         Mat mask = mat.clone();
-        List<Mat> channels = new LinkedList<>();
-        Core.split(mat, channels);
-        for (int row = 0; row < mat.rows(); row++)
+        for (int row = 0; row < mat.rows(); row++) {
             for (int col = 0; col < mat.cols(); col++) {
-                double[] color = mat.get(row, col);
-                if (color[0] == 255 && color[1] == 0 && color[2] == 255) {
-                    mask.put(row, col, 0, 0, 0);
-                } else {
-                    mask.put(row, col, 255, 255, 255);
-                }
+                double[] c = mat.get(row, col);
+                int a = c[0] == 255 && c[1] == 0 && c[2] == 255 ? 0 : 255;
+                mask.put(row, col, a, a, a);
             }
-        // Imgproc.cvtColor(mask, mask, Imgproc.COLOR_RGB2GRAY);
+        }
         Imgcodecs.imwrite(name + "-mask.bmp", mask);
         this.actionBarTemplates.add(new Mat[]{mat, mask});
     }
@@ -53,23 +50,23 @@ public class ActionBarUpdater {
     @EventHandler
     public void onFrameCaptured(FrameCaptured evt) {
         Mat frame = evt.getFrame();
+        if (frame.empty()) return;
         for (Mat[] templateMaskPair : this.actionBarTemplates) {
             Mat template = templateMaskPair[0];
-            Mat mask = templateMaskPair[0];
+            Mat mask = templateMaskPair[1];
 
             Mat result = new Mat();
 
-            Imgproc.matchTemplate(frame, template, result, Imgproc.TM_SQDIFF, mask);
+            Imgproc.matchTemplate(frame, template, result, Imgproc.TM_CCORR_NORMED, mask);
 
             Core.MinMaxLocResult minMaxLoc = Core.minMaxLoc(result);
-
-            Point pos = minMaxLoc.maxLoc;
-            Rect rect = new Rect(pos, template.size());
-
-            System.out.println("ActionBar: bounds=" + rect + ", match=" + minMaxLoc.maxVal);
-
-            Imgproc.rectangle(frame, rect, CYAN, 2);
-
+            if (minMaxLoc.maxVal >= 0.9) {
+                Point pos = minMaxLoc.maxLoc;
+                Rect rect = new Rect(pos, template.size());
+                System.out.println("ActionBar: bounds=" + rect + ", match=" + minMaxLoc.maxVal);
+                Imgproc.rectangle(frame, rect, CYAN, 2);
+                evt.getContext().getVars().put(KEY_ACTIONBAR_RECT, rect);
+            }
             result.release();
         }
     }

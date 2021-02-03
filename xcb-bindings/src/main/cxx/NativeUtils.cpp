@@ -11,7 +11,15 @@ Java_org_freedesktop_xcb_NativeUtils_copyToBuffer(JNIEnv * env, jclass, jlong pt
        "/buf=" << buf <<
        "/len=" << len);
  void* src = (void*) ptr;
+ if (!src) {
+    WARN("Java_org_freedesktop_xcb_NativeUtils_copyToBuffer:src:nullptr");
+    return;
+ }
  void* dest = env->GetDirectBufferAddress(buf);
+ if (!dest) {
+    WARN("Java_org_freedesktop_xcb_NativeUtils_copyToBuffer:dest:nullptr");
+    return;
+ }
  memcpy(dest, src, len);
 }
 

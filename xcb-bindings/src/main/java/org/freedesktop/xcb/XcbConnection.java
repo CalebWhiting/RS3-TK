@@ -29,7 +29,7 @@ public class XcbConnection extends Pointer {
     public XcbQueryTreeReply queryTree(XID window) {
         long[] err = {0};
         long cookie = 0;
-        long reply = 0;
+        long reply;
         try {
             cookie = X.query_tree(this.p, window.getId());
             if (cookie == 0)
@@ -49,7 +49,7 @@ public class XcbConnection extends Pointer {
     public XcbWindowAttributes getWindowAttributes(XID window) {
         long[] err = {0};
         long cookie = 0;
-        long reply = 0;
+        long reply;
         try {
             cookie = X.get_window_attributes(this.p, window.getId());
             if (cookie == 0)
@@ -74,7 +74,7 @@ public class XcbConnection extends Pointer {
 
         long cookie = 0;
         long reply = 0;
-        long namePtr = 0;
+        long namePtr;
         try {
             cookie = X.get_property(this.p, false, window.getId(), property, type, offset, length);
             if (cookie == 0)
@@ -92,16 +92,14 @@ public class XcbConnection extends Pointer {
             namePtr = X.get_property_value(reply);
             return namePtr == 0 ? null : X.chars_to_string(namePtr, valueLength);
         } finally {
-            NativeUtils.free(cookie);
-            NativeUtils.free(reply);
-            // NativeUtils.free(namePtr);
+            NativeUtils.free(cookie, reply);
         }
     }
 
     public XcbGeometry getGeometry(XID xid) {
         long[] err = {0};
         long cookie = 0;
-        long reply = 0;
+        long reply;
         try {
             cookie = X.get_geometry(this.p, xid.getId());
             if (cookie == 0)

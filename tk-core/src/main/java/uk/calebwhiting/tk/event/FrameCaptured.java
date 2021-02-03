@@ -12,5 +12,6 @@ public class FrameCaptured {
     private final ClientContextImpl context;
 
     private final Mat frame;
+    private final Mat osd;
 
 }

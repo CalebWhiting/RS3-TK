@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CaptureManager implements Runnable {
 
-    private static final String CLIENT_WM_CLASS = String.join("\n", "RuneScape", "RuneScape");
+    private static final String CLIENT_WM_CLASS = "RuneScape";
 
     private final XID[] XID_BUF = new XID[3];
     @Getter
@@ -38,6 +38,7 @@ public class CaptureManager implements Runnable {
 
     private Mat mat = null;
     private Mat rgb = null;
+    private Mat osd = null;
     // private Mat rgba = null;
     private int matHash = -1;
 
@@ -53,6 +54,7 @@ public class CaptureManager implements Runnable {
         System.out.println("Shutting down capture service");
         if (this.mat != null) this.mat.release();
         if (this.rgb != null) this.rgb.release();
+        if (this.osd != null) this.osd.release();
         // if (this.rgba != null) this.rgba.release();
         if (this.captureService != null && !this.captureService.isShutdown())
             this.captureService.shutdown();
@@ -77,8 +79,15 @@ public class CaptureManager implements Runnable {
     private void capture(ClientContextImpl client) {
         // write image now so that any transforms (should) have been completed.
         if (this.rgb != null) {
-            System.out.println("Writing image");
-            Imgcodecs.imwrite("test.bmp", this.rgb);
+            Mat image = null;
+            try {
+                image = new Mat();
+                Imgproc.cvtColor(this.rgb, image, Imgproc.COLOR_RGB2RGBA);
+                System.out.println("Writing image");
+                Imgcodecs.imwrite("test.bmp", image);
+            } finally {
+                if (image != null) image.release();
+            }
         }
 
         XID xid = client.getXid();
@@ -90,9 +99,11 @@ public class CaptureManager implements Runnable {
         if (this.mat == null || newMatHash != this.matHash) {
             if (this.mat != null) this.mat.release();
             if (this.rgb != null) this.rgb.release();
+            if (this.osd != null) this.osd.release();
             // if (this.rgba != null) this.rgba.release();
             this.mat = new Mat(h, w, CvType.CV_8UC4);
             this.rgb = new Mat(h, w, CvType.CV_8UC4);
+            this.osd = new Mat(h, w, CvType.CV_8UC4);
             // this.rgba = new Mat(h, w, CvType.CV_8UC4);
             this.matHash = newMatHash;
         }
@@ -104,7 +115,7 @@ public class CaptureManager implements Runnable {
         Imgproc.cvtColor(mat, rgb, Imgproc.COLOR_BGRA2BGR);
         // Imgproc.cvtColor(rgb, rgba, Imgproc.COLOR_BGR2BGRA);
 
-        eventBus.post(new FrameCaptured(client, this.rgb));
+        eventBus.post(new FrameCaptured(client, this.rgb, this.osd));
 
     }
 

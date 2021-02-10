@@ -28,7 +28,6 @@
     <modules>
         <module>xcb-bindings</module>
         <module>tk-annotations</module>
-        <module>tk-annotation-processor</module>
         <module>tk-api</module>
         <module>tk-core</module>
     </modules>

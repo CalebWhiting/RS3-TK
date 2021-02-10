@@ -3,7 +3,7 @@ package uk.calebwhiting.tk.event;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import uk.calebwhiting.tk.inject.ClientContextImpl;
+import uk.calebwhiting.tk.api.ClientContext;
 
 @RequiredArgsConstructor
 @Getter
@@ -14,6 +14,6 @@ public class ClientEvent {
     public static final int CLIENT_WINDOW_REMOVED = 1;
 
     private final int id;
-    private final ClientContextImpl context;
+    private final ClientContext context;
 
 }

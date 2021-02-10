@@ -1,9 +1,7 @@
 package uk.calebwhiting.tk;
 
-import com.google.common.eventbus.EventBus;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Module;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -16,11 +14,11 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.Getter;
-import org.opencv.osgi.OpenCVNativeLoader;
-import uk.calebwhiting.tk.event.Exiting;
+
+import uk.calebwhiting.tk.bus.EventBus;
 import uk.calebwhiting.tk.event.Starting;
-import uk.calebwhiting.tk.inject.CaptureManager;
 import uk.calebwhiting.tk.plugins.ActionBarUpdater;
+import uk.calebwhiting.tk.plugins.FpsMonitor;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,10 +31,12 @@ public class App extends Application {
     private static final String ICON_RESOURCE = "/uk/calebwhiting/tk/images/3.png";
     private static final String BORDER_RESOURCE = "/com/runescape/images/border.png";
     private static final String CSS_RESOURCE = "/uk/calebwhiting/tk/css/app.css";
-    private final Module module = new TkModule(this);
-    private Injector injector;
+
     @Getter
     private Stage stage;
+
+    private TkModule module;
+    private Injector injector;
 
     public static void main(String[] args) {
         launch(args);
@@ -86,28 +86,24 @@ public class App extends Application {
     @Override
     public void init() throws Exception {
         super.init();
-        new OpenCVNativeLoader().init();
-        injector = Guice.createInjector(com.google.inject.Stage.DEVELOPMENT, module);
-        EventBus eventBus = injector.getInstance(EventBus.class);
 
-        Object[] plugins = {
-                injector.getInstance(CaptureManager.class),
-                new ActionBarUpdater()
-        };
+        module = new TkModule(this);
+        injector = Guice.createInjector(module);
+        EventBus bus = injector.getInstance(EventBus.class);
 
-        for (Object plugin : plugins)
-            eventBus.register(plugin);
+        bus.register(this);
+        bus.register(injector.getInstance(CaptureManager.class));
+        bus.register(new ActionBarUpdater());
+        bus.register(new FpsMonitor());
 
-        eventBus.post(new Starting());
+        bus.dispatch(new Starting());
     }
 
     @Override
     public void stop() throws Exception {
         super.stop();
-        if (injector != null) {
-            EventBus bus = injector.getInstance(EventBus.class);
-            bus.post(new Exiting());
-        }
+        EventBus bus = injector.getInstance(EventBus.class);
+        bus.shutdown();
         if (this.stage != null) {
             this.stage.close();
         }

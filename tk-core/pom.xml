@@ -14,8 +14,8 @@
     <version>1.0</version>
 
     <properties>
-        <opencv.version>4.2</opencv.version>
-        <opencv.path>/usr/share/java/opencv-420.jar</opencv.path>
+        <!-- <opencv.version>4.2</opencv.version>-->
+        <!-- <opencv.path>/usr/share/java/opencv-420.jar</opencv.path>-->
     </properties>
     <build>
         <plugins>
@@ -30,25 +30,20 @@
                             <artifactId>lombok</artifactId>
                             <version>1.18.16</version>
                         </path>
-                        <path>
-                            <groupId>uk.calebwhiting.rs3tk</groupId>
-                            <artifactId>tk-annotation-processor</artifactId>
-                            <version>1.0</version>
-                        </path>
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>opencv</groupId>
             <artifactId>opencv</artifactId>
             <version>${opencv.version}</version>
             <scope>system</scope>
             <type>jar</type>
             <systemPath>${opencv.path}</systemPath>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>

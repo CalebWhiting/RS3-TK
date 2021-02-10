@@ -1,74 +1,64 @@
 package uk.calebwhiting.tk.plugins;
 
 import com.google.common.eventbus.Subscribe;
-import org.opencv.core.*;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
-import uk.calebwhiting.tk.annotations.EventHandler;
+import lombok.Getter;
 import uk.calebwhiting.tk.annotations.Plugin;
+import uk.calebwhiting.tk.color.*;
+import uk.calebwhiting.tk.color.sample.XImageSample;
 import uk.calebwhiting.tk.event.FrameCaptured;
-import uk.calebwhiting.tk.event.Starting;
 
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
+import java.awt.*;
 
 @Plugin(name = "Action Bar Updater", version = 1.0)
 public class ActionBarUpdater {
 
-    public static final String KEY_ACTIONBAR_RECT = "ActionBar.Rect";
+    private static final Template[] ACTIONBAR_TEMPLATES = {
+            new DistributedColorTemplate(0.9f,
+                    new ColorMarker(0, 0, 0x4E5B66),
+                    new ColorMarker(529, 0, 0x4E5B66),
+                    new ColorMarker(529, 75, 0x3E4951),
+                    new ColorMarker(0, 75, 0x3E4951)
+            )
+    };
 
-    private static final Scalar CYAN = new Scalar(0, 150, 255);
-
-    private final List<Mat[]> actionBarTemplates = new LinkedList<>();
-
-    @Subscribe
-    public void onStarting(Starting evt) throws URISyntaxException {
-        loadActionBarImage("primary-action-bar-1-template");
-    }
-
-    private void loadActionBarImage(String name) throws URISyntaxException {
-        URL in = getClass().getResource("/uk/calebwhiting/tk/images/" + name + ".bmp");
-        Mat mat = Imgcodecs.imread(new File(in.toURI()).getAbsolutePath(), Imgcodecs.IMREAD_UNCHANGED);
-        Imgcodecs.imwrite(name + "-dump.bmp", mat);
-
-        Mat mask = mat.clone();
-        for (int row = 0; row < mat.rows(); row++) {
-            for (int col = 0; col < mat.cols(); col++) {
-                double[] c = mat.get(row, col);
-                int a = c[0] == 255 && c[1] == 0 && c[2] == 255 ? 0 : 255;
-                mask.put(row, col, a, a, a);
-            }
-        }
-        Imgcodecs.imwrite(name + "-mask.bmp", mask);
-        this.actionBarTemplates.add(new Mat[]{mat, mask});
+    @Getter
+    public static class ActionBarInfo {
+        private int type = -1;
+        private Rectangle bounds = null;
     }
 
     @Subscribe
-    @EventHandler
-    public void onFrameCaptured(FrameCaptured evt) {
-        Mat frame = evt.getFrame();
-        if (frame.empty()) return;
-        for (Mat[] templateMaskPair : this.actionBarTemplates) {
-            Mat template = templateMaskPair[0];
-            Mat mask = templateMaskPair[1];
-
-            Mat result = new Mat();
-
-            Imgproc.matchTemplate(frame, template, result, Imgproc.TM_CCORR_NORMED, mask);
-
-            Core.MinMaxLocResult minMaxLoc = Core.minMaxLoc(result);
-            if (minMaxLoc.maxVal >= 0.9) {
-                Point pos = minMaxLoc.maxLoc;
-                Rect rect = new Rect(pos, template.size());
-                System.out.println("ActionBar: bounds=" + rect + ", match=" + minMaxLoc.maxVal);
-                Imgproc.rectangle(frame, rect, CYAN, 2);
-                evt.getContext().getVars().put(KEY_ACTIONBAR_RECT, rect);
+    public void updateActionBarRect(FrameCaptured evt) {
+        ActionBarInfo vars = evt.getContext().getDataStructure(ActionBarInfo.class);
+        int previousIndex = vars.getType();
+        if (previousIndex != -1) {
+            Rectangle previousBounds = vars.getBounds();
+            Sample sample = new XImageSample(evt.getImage(), previousBounds.x, previousBounds.y);
+            if (ACTIONBAR_TEMPLATES[previousIndex].compare(sample) == 1f) {
+                return;
             }
-            result.release();
+            vars.type = -1;
+            vars.bounds = null;
         }
+        Match m = null;
+        for (int i = 0; i < ACTIONBAR_TEMPLATES.length; i++) {
+            Template template = ACTIONBAR_TEMPLATES[i];
+            Match[] matches = template.query(evt.getImage(), 1f);
+            if (matches.length == 0)
+                continue;
+            if (matches.length > 1)
+                System.err.println("ACTIONBAR_TEMPLATES[" + i + "] returned " + matches.length + " matches!");
+            m = matches[0];
+            vars.type = i;
+            vars.bounds = new Rectangle(m.getPoint(), template.size());
+            break;
+        }
+
+        if (m == null) {
+            System.out.println("No match");
+            return;
+        }
+        System.out.println("Match: " + m.getPoint() + ", " + m.getSimilarity());
     }
 
 }

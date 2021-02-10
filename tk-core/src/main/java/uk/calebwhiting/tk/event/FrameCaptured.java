@@ -2,16 +2,15 @@ package uk.calebwhiting.tk.event;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.opencv.core.Mat;
-import uk.calebwhiting.tk.inject.ClientContextImpl;
+import org.freedesktop.xcb.XcbImage;
+import uk.calebwhiting.tk.api.ClientContext;
 
 @Getter
 @RequiredArgsConstructor
 public class FrameCaptured {
 
-    private final ClientContextImpl context;
+    private final ClientContext context;
 
-    private final Mat frame;
-    private final Mat osd;
+    private final XcbImage image;
 
 }

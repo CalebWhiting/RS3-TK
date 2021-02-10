@@ -1,4 +1,4 @@
-package uk.calebwhiting.tk.inject;
+package uk.calebwhiting.tk;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
